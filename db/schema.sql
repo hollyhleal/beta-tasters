@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS devlore_db;
+
+CREATE DATABASE devlore_db;
