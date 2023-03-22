@@ -1,13 +1,13 @@
-const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
+const sequelize = require("../config/connection");
 
 class BetaTaster extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-//rANDOM 
+//rANDOM
 BetaTaster.init(
   {
     id: {
@@ -37,11 +37,17 @@ BetaTaster.init(
     },
   },
   {
+    hooks: {
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'BetaTaster',
+    modelName: "BetaTaster",
   }
 );
 
-module.exports = BetaTaster ;
+module.exports = BetaTaster;
