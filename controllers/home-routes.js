@@ -1,21 +1,19 @@
-const router = require('express').Router();
-const { User } = require('../models');
-router.get('/', async (req, res) => {
+const router = require("express").Router();
+const { User } = require("../models");
+router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
       include: [
         {
           model: User,
-          attributes: ['username, email, password'],
+          attributes: ["username, email, password"],
         },
       ],
     });
 
-    const users = userData.map((user) =>
-      user.get({ plain: true })
-    );
+    const users = userData.map((user) => user.get({ plain: true }));
 
-    res.render('homepage', {
+    res.render("homepage", {
       users,
       loggedIn: req.session.loggedIn,
     });
