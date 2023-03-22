@@ -7,7 +7,6 @@ class BetaTaster extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
 BetaTaster.init(
   {
     id: {
@@ -33,11 +32,17 @@ BetaTaster.init(
     },
   },
   {
+    hooks: {
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "BetaTaster",
+    modelName: 'BetaTaster',
   }
 );
 
-module.exports = BetaTaster;
+module.exports = BetaTaster ;
