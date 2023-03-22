@@ -3,11 +3,13 @@
   --darkgreen: #94b49f;
   --lightgreen: #b4cfb0;
   --beige: #e5e3c9;
-  --logofont: 'Cinzel Decorative', cursive;
-  --headerfont: 'Playfair Display', serif;
-  --bodyfont: 'Playfair Display SC', serif;
+  --logofont: "Cinzel Decorative", cursive;
+  --headerfont: "Playfair Display", serif;
+  --bodyfont: "Playfair Display SC", serif;
 }
 
-
-
-
+.logo {
+  font-family: var(--logofont);
+  text-align: left;
+  padding: 40px;
+}

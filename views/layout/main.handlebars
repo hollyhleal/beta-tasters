@@ -24,12 +24,37 @@
     />
   </head>
   <body>
+    <header>
+      <h1 class="logo">DevLore Cafe</h1>
+    </header>
     <div class="container">
       <nav class="navbar bg-success">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Default</a>
+          {{#if loggedInUser}}
+            <a href="#">Menu</a>
+            <a href="#">Post a Review</a>
+            <a href="#">Logout</a>
+          {{else}}
+            {{#if loggedInManager}}
+              <a href="#">Update Menu</a>
+              <a href="#">Reviews</a>
+              <a href="#">Logout</a>
+            {{/if}}
+          {{/if}}
         </div>
       </nav>
     </div>
+    <main>
+      <div>
+        {{{body}}}
+      </div>
+    </main>
+    <footer>
+      <p>DevLore Cafe ⓒ 2023</p>
+    </footer>
+    {{!-- is this possible with helpers? --}}
+    {{#if loggedInUser || loggedInManager}} 
+      <script src="../../public/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>
