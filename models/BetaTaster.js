@@ -7,6 +7,7 @@ class BetaTaster extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
+//rANDOM
 BetaTaster.init(
   {
     id: {
@@ -14,6 +15,10 @@ BetaTaster.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
@@ -41,8 +46,8 @@ BetaTaster.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'BetaTaster',
+    modelName: "BetaTaster",
   }
 );
 
-module.exports = BetaTaster ;
+module.exports = BetaTaster;
