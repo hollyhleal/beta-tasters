@@ -1,14 +1,16 @@
 const router = require("express").Router();
-const { BetaTaster } = require("../models");
+const { Beta } = require("../models");
 router.get("/", async (req, res) => {
   try {
-    const betatasterData = await BetaTaster.findAll({});
+    const betatasterData = await Beta.findAll().catch((err) => {
+      res.json(err);
+    });
 
     const betatasters = betatasterData.map((betatasters) =>
       betatasters.get({ plain: true })
     );
 
-    res.render("homepage", {
+    res.render("signup", {
       betatasters,
       loggedIn: req.session.loggedIn,
     });
