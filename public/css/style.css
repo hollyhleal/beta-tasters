@@ -7,3 +7,9 @@
   --headerfont: "Playfair Display", serif;
   --bodyfont: "Playfair Display SC", serif;
 }
+
+.logo {
+  font-family: var(--logofont);
+  text-align: left;
+  padding: 40px;
+}
