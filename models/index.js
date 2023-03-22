@@ -1,6 +1,4 @@
-const Rating = require("./Rating.js");
-
-
+const Rating = require('./Rating.js');
 
 
 
