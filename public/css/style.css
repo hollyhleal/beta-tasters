@@ -12,4 +12,18 @@
   font-family: var(--logofont);
   text-align: left;
   padding: 40px;
+  color: var(--lightgreen);
+}
+
+.navbar {
+  background-color: var(--blue);
+}
+
+footer {
+  background-color: var(--blue);
+  color: var(--lightgreen);
+}
+
+main {
+  background-color: var(--beige);
 }
