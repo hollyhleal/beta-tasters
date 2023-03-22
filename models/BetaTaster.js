@@ -7,7 +7,7 @@ class BetaTaster extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
+//rANDOM 
 BetaTaster.init(
   {
     id: {
