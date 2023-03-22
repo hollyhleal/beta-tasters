@@ -34,16 +34,19 @@
               ></button>
             </div>
             <div class="modal-body">
+                <form action="/example" method="POST">
               <label class="form-label" for="createUserName">Username:</label>
               <input
                 type="text"
                 id="createUserName"
+                name="username"
                 class="form-control form-control-lg"
               />
               <label class="form-label" for="createUserEmail">Email:</label>
               <input
                 type="text"
                 id="createUserEmail"
+                name="email"
                 class="form-control form-control-lg"
               />
               <label
@@ -53,6 +56,7 @@
               <input
                 type="password"
                 id="createUserPassword"
+                name="password"
                 class="form-control form-control-lg"
               />
             </div>
@@ -62,8 +66,9 @@
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
               >Close</button>
-              <button type="button" class="btn btn-primary">Create Account</button>
+              <button type="submit" class="btn btn-primary">Create Account</button>
             </div>
+            </form>
           </div>
         </div>
       </div>
