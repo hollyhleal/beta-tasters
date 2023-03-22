@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
       betatasters.get({ plain: true })
     );
 
-    res.render("signup", {
+    res.render("landing", {
       betatasters,
       loggedIn: req.session.loggedIn,
     });
