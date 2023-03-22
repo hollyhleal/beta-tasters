@@ -1,22 +1,15 @@
-const router = require('express').Router();
-const { BetaTaster } = require('../models');
-router.get('/', async (req, res) => {
+const router = require("express").Router();
+const { BetaTaster } = require("../models");
+router.get("/", async (req, res) => {
   try {
-    const betaTasterata = await BetaTaster.findAll({
-      include: [
-        {
-          model: BetaTaster,
-          attributes: ['username, email, password'],
-        },
-      ],
-    });
+    const betatasterData = await BetaTaster.findAll({});
 
-    const betataster = userData.map((user) =>
-      user.get({ plain: true })
+    const betatasters = betatasterData.map((betatasters) =>
+      betatasters.get({ plain: true })
     );
 
-    res.render('homepage', {
-      BetaTaster,
+    res.render("homepage", {
+      betatasters,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
