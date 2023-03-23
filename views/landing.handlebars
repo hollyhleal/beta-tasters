@@ -138,19 +138,140 @@
         </div>
       </div>
 
-
     </div>
   </div>
+
   <div class="container">
     <div class="row"><h2>DevLore Cafe Management</h2></div>
     <div class="row">
-      <button href="#" type="button" class="btn btn-primary btn-lg">Create
-        Account</button>
+      <!-- Button trigger modal - Management Create Account -->
       <button
-        href="#"
         type="button"
-        class="btn btn-secondary btn-lg"
-      >Login</button>
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Create Account
+      </button>
+
+      <!-- Modal - Management Create Account -->
+      <!-- route: /mgrcreate -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">DevLore Management -
+                Create Account</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+                <form action="/mgrcreate" method="POST">
+              <label class="form-label" for="createMgrEmail">Email:</label>
+              <input
+                type="text"
+                id="createMgrEmail"
+                name="email"
+                class="form-control form-control-lg"
+              />
+              <label
+                class="form-label"
+                for="createMgrPassword"
+              >Password:</label>
+              <input
+                type="password"
+                id="createMgrPassword"
+                name="password"
+                class="form-control form-control-lg"
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >Close</button>
+              <button type="submit" class="btn btn-primary">Create Account</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button trigger modal - Management Login -->
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Login
+      </button>
+
+      <!-- Modal - Management Login -->
+      <!-- route: /mgrlogin -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Manager -
+                Login</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+                <form action="/mgrlogin" method="POST">
+              <label class="form-label" for="mgrEmail">Email:</label>
+              <input
+                type="text"
+                id="mgrEmail"
+                name="mgrEmail"
+                class="form-control form-control-lg"
+              />
+              <label
+                class="form-label"
+                for="mgrPassword"
+              >Password:</label>
+              <input
+                type="password"
+                id="mgrPassword"
+                name="mgrPassword"
+                class="form-control form-control-lg"
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >Close</button>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
