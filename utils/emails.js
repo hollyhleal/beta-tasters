@@ -2,7 +2,7 @@
 const nodemailer = require("nodemailer");
 console.log(process.env);
 
-module.exports = () => {
+module.exports = (email, msg) => {
   const transporter = nodemailer.createTransport({
     service: "hotmail",
     auth: {
