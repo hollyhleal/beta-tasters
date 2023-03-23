@@ -1,13 +1,14 @@
 <section>
   <div class="container mt-5">
     <h1>Contact Us @ DevLore Cafe!</h1>
-    <form class="row g-3">
+    <form id="contact-form" class="row g-3">
       <div class="col-md-6">
         <label for="firstName" class="form-label">First Name</label>
         <input
           type="text"
           class="form-control"
           id="firstName"
+          name="firstName"
           placeholder="James"
           required
         />
@@ -18,6 +19,7 @@
           type="text"
           class="form-control"
           id="lastName"
+          name="lastName"
           placeholder="Smith"
           required
         />
@@ -27,6 +29,7 @@
         <input
           type="email"
           class="form-control"
+          name="email"
           id="email"
           placeholder="Example@DevLore.com"
           required
@@ -37,6 +40,7 @@
         <input
           type="text"
           class="form-control"
+          name="phoneNumber"
           id="phoneNumber"
           placeholder="+1 (303) 394-3992"
         />
@@ -46,6 +50,7 @@
         <textarea
           class="form-control"
           id="comments"
+          name="comments"
           cols="15"
           rows="5"
         ></textarea>
@@ -56,3 +61,4 @@
     </form>
   </div>
 </section>
+<script src="../public/js/email.js"></script>
