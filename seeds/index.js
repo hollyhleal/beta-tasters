@@ -1,7 +1,6 @@
 const sequelize = require("../config/connection");
 const seedFood = require("./Food-seed.js");
 const seedRatings = require("./Rating-seed.js");
-//const betaTasters = require("./BetaTaster-seed.js");
 const seedBeta = require("./BetaTaster-seed.js");
 const seedManage = require("./management-seed");
 
@@ -10,21 +9,21 @@ const seedAll = async () => {
 
   console.log("\n----- DATABASE SYNCED -----\n");
 
-  await seedFood();
+  await seedManage();
 
-  console.log("\n----- FOOD SEEDED -----\n");
+  console.log("\n----- MANAGEMENT SEEDED -----\n");
 
-  await seedRatings();
-
-  console.log("\n----- RATINGS SEEDED -----\n");
 
   await seedBeta();
 
   console.log("\n----- BETATASTERS SEEDED -----\n");
 
-  await seedManage();
+  console.log("\n----- FOOD SEEDED -----\n");
 
-  console.log("\n----- MANAGEMENT SEEDED -----\n");
+
+  await seedRatings();
+
+  console.log("\n----- RATINGS SEEDED -----\n");
 
   process.exit(0);
 };

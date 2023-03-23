@@ -1,0 +1,68 @@
+<section class="review-user">
+  <div>
+    <h2 id="review-user-h2">Post a Review</h2>
+  </div>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <form action="/betareview" method="POST">
+        
+        {{!-- dropdown menu for menu items --}}
+        <div class="dropdown text-center">
+          <button
+            class="btn dropdown-toggle"
+            id="user-dropdown-btn"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Menu Items
+          </button>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">Menu Item 1</button></li>
+            <li><button class="dropdown-item" type="button">Menu Item 2</button></li>
+            <li><button class="dropdown-item" type="button">Menu Item 3</button></li>
+            <li><button class="dropdown-item" type="button">Menu Item 4</button></li>
+            <li><button class="dropdown-item" type="button">Menu Item 5</button></li>
+            <li><button class="dropdown-item" type="button">Menu Item 6</button></li>
+            <li><button class="dropdown-item" type="button">Menu Item 7</button></li>
+            <li><button class="dropdown-item" type="button">Menu Item 8</button></li>
+          </ul>
+          
+          {{!-- checkboxes for grabbing the users rating for each dish --}}
+          <div class="mt-5">
+            <h4>Please provide a rating for this menu item: </h4>
+            <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">1</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">2</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+  <label class="form-check-label" for="inlineRadio3">3</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" disabled>
+  <label class="form-check-label" for="inlineRadio3">4</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" disabled>
+  <label class="form-check-label" for="inlineRadio3">5</label>
+</div>
+
+<div class="mt-5">
+  <h4></h4>
+
+</div>
+          </div>
+        </form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

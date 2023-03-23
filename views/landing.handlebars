@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row"><h2>Beta Taster</h2></div>
     <div class="row">
-      {{! <button href="#" type="button" class="btn btn-primary btn-lg">Create Account</button> }}
-      <!-- Button trigger modal -->
+
+      <!-- Button trigger modal - Beta Taster Create Account -->
       <button
         type="button"
         class="btn btn-primary"
@@ -13,7 +13,8 @@
         Create Account
       </button>
 
-      <!-- Modal -->
+      <!-- Modal - Beta Taster Create Account -->
+      <!-- route: /betacreate -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -34,7 +35,7 @@
               ></button>
             </div>
             <div class="modal-body">
-                <form action="/example" method="POST">
+                <form action="/betacreate" method="POST">
               <label class="form-label" for="createUserName">Username:</label>
               <input
                 type="text"
@@ -73,11 +74,71 @@
         </div>
       </div>
 
+      <!-- Button trigger modal - Beta Taster Login -->
       <button
-        href="#"
         type="button"
-        class="btn btn-secondary btn-lg"
-      >Login</button>
+        class="btn btn-secondary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Login
+      </button>
+
+      <!-- Modal - Beta Taster Login -->
+      <!-- route: /betalogin -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Beta Taster -
+                Login</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+                <form action="/betalogin" method="POST">
+              <label class="form-label" for="userEmail">Email:</label>
+              <input
+                type="text"
+                id="userEmail"
+                name="userEmail"
+                class="form-control form-control-lg"
+              />
+              <label
+                class="form-label"
+                for="userPassword"
+              >Password:</label>
+              <input
+                type="password"
+                id="userPassword"
+                name="userPassword"
+                class="form-control form-control-lg"
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >Close</button>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
   <div class="container">

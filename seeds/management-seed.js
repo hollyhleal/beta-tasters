@@ -2,6 +2,10 @@ const { ManageSeed } = require("../models");
 
 const ManageData = [
   {
+    email: "mount.photos@gmail.com",
+    password: "Colorado2018!",
+  },
+  {
     email: "devlorecafeimposter@outlook.com",
     password: "devLoreCafe4$",
   },
