@@ -1,0 +1,43 @@
+<section class="menu-mgr">
+<div class="container">
+
+    <!-- Update Menu Item -->
+    <div class="column">
+        <h2>Update Menu Item</h2>
+        <form action="/updateitem" method="PUT">
+            <div class="dropdown text-center">
+            <button
+            class="btn dropdown-toggle"
+            id="user-dropdown-btn"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Menu Items</button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item" type="button">Menu Item 1</button></li>
+                    <li><button class="dropdown-item" type="button">Menu Item 2</button></li>
+                    <li><button class="dropdown-item" type="button">Menu Item 3</button></li>
+                </ul>
+            
+            <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Update</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Title</a></li>
+                <li><a class="dropdown-item" href="#">Description</a></li>
+            </ul>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            </div>
+        </form>
+    </div>
+
+<div class="column">
+<h2>Add Menu Item</h2>
+</div>
+
+
+<div class="column">
+<h2>Delete Menu Item</h2>
+</div>
+
+</div>
+</section>
