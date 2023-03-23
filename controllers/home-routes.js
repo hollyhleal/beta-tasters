@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const { Beta } = require("../models");
+const { Beta, Rating, Food, Mange } = require("../models");
 router.get("/", async (req, res) => {
   try {
-    const betatasterData = await Beta.findAll().catch((err) => {
+    const betatasterData = await Beta.findAll({}).catch((err) => {
       res.json(err);
     });
 

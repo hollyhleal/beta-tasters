@@ -1,7 +1,6 @@
 const sequelize = require("../config/connection");
 const seedFood = require("./Food-seed.js");
 const seedRatings = require("./Rating-seed.js");
-const betaTasters = require("./BetaTaster-seed.js");
 const seedBeta = require("./BetaTaster-seed.js");
 // const management = require("./management");
 
