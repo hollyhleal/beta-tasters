@@ -44,8 +44,12 @@ main {
   text-align: center;
 } */
 
-#user-dropdown-btn {
+.user-dropdown-btn {
   background-color: var(--blue);
+}
+
+.user-dropdown-btn:hover {
+  background-color: rgb(152, 171, 179);
 }
 
 #user-submit-review-btn {
