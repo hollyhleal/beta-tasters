@@ -15,19 +15,19 @@ Rating.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // account_id: {
+    // user_id: {
     //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "BetaTaster",
-    //     key: "id",
-    //   },
+    //   // references: {
+    //   //   model: "BetaTaster",
+    //   //   key: "id",
+    //   // },
     // },
-    // product_id: {
+    // food_id: {
     //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "food",
-    //     key: "id",
-    //   },
+    //   // references: {
+    //   //   model: "Food",
+    //   //   key: "id",
+    //   // },
     // },
   },
   {
