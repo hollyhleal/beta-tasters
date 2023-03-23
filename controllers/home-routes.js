@@ -10,10 +10,25 @@ router.get("/", async (req, res) => {
       betatasters.get({ plain: true })
     );
 
-    res.render("signup", {
+    res.render("login-user", {
       betatasters,
       loggedIn: req.session.loggedIn,
     });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Front-end test route
+router.post("/example", async (req, res) => {
+  try {
+    console.log("=====");
+    console.log(req.body);
+    console.log("=====");
+    // res.status(200).send("Example submitted!");
+    // res.render("landing");
+    res.redirect("/");
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
