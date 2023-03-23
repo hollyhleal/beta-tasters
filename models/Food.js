@@ -19,13 +19,13 @@ Food.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    // management_id: {
-    //   type: DataTypes.INTEGER,
-    //   // references: {
-    //   //   model: "management",
-    //   //   key: "id",
-    //   // },
-    // },
+    management_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Management",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,

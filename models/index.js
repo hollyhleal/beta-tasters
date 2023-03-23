@@ -3,13 +3,15 @@ const Food = require("./Food.js");
 const Beta = require("./BetaTaster.js");
 const Mange = require("./management.js");
 
-// Mange.hasMany(Food, {
-//   foreignKey: " management_id",
-// });
+Mange.hasMany(Food);
+Food.belongsTo(Mange, {
+  foreignKey: "management_id",
+});
 
-// Food.hasMany(Rating, {
-//   foreignKey: "food_id",
-// });
+Beta.hasMany(Rating);
+Rating.belongsTo(Beta, {
+  foreignKey: "user_id",
+});
 
 // Beta.hasMany(Rating, {
 //   foreignKey: "user_id",
