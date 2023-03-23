@@ -1,43 +1,95 @@
 <section class="menu-mgr">
-<div class="container">
-
-    <!-- Update Menu Item -->
-    <div class="column">
+  <div class="container text-center">
+    <div class="row align-items-start">
+      <!-- Update Menu Item -->
+      <div class="col">
         <h2>Update Menu Item</h2>
         <form action="/updateitem" method="PUT">
-            <div class="dropdown text-center">
+          <div class="dropdown text-center">
             <button
-            class="btn dropdown-toggle"
-            id="user-dropdown-btn"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            >Menu Items</button>
-                <ul class="dropdown-menu">
-                    <li><button class="dropdown-item" type="button">Menu Item 1</button></li>
-                    <li><button class="dropdown-item" type="button">Menu Item 2</button></li>
-                    <li><button class="dropdown-item" type="button">Menu Item 3</button></li>
-                </ul>
-            
-            <div class="input-group mb-3">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Update</button>
+              class="btn dropdown-toggle"
+              id="user-dropdown-btn"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Menu Item</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Title</a></li>
-                <li><a class="dropdown-item" href="#">Description</a></li>
+              <li><button class="dropdown-item" type="button">Menu Item 1</button></li>
+              <li><button class="dropdown-item" type="button">Menu Item 2</button></li>
+              <li><button class="dropdown-item" type="button">Menu Item 3</button></li>
             </ul>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-            </div>
+          </div>
+          <div class="input-group mb-3">
+            <span
+              class="input-group-text"
+              id="inputGroup-sizing-default"
+            >Title</span>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-text">Description</span>
+            <textarea
+              class="form-control"
+              aria-label="With textarea"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn">Update Item</button>
         </form>
+      </div>
+
+      <div class="col">
+        <h2>Add Menu Item</h2>
+        <form action="/additem" method="POST">
+          <div class="input-group mb-3">
+            <span
+              class="input-group-text"
+              id="inputGroup-sizing-default"
+            >Title</span>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-text">Description</span>
+            <textarea
+              class="form-control"
+              aria-label="With textarea"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn">Add Item</button>
+        </form>
+      </div>
+
+      <div class="col">
+        <h2>Delete Menu Item</h2>
+        <form action="/deleteitem" method="DEL">
+          <div class="dropdown text-center">
+            <button
+              class="btn dropdown-toggle"
+              id="user-dropdown-btn"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Menu Item</button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Menu Item 1</button></li>
+              <li><button class="dropdown-item" type="button">Menu Item 2</button></li>
+              <li><button class="dropdown-item" type="button">Menu Item 3</button></li>
+            </ul>
+          </div>
+          <button type="button" id="delete-btn" class="btn">Delete</button>
+        </form>
+      </div>
     </div>
-
-<div class="column">
-<h2>Add Menu Item</h2>
-</div>
-
-
-<div class="column">
-<h2>Delete Menu Item</h2>
-</div>
-
-</div>
+  </div>
 </section>
