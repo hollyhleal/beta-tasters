@@ -24,7 +24,13 @@ const ratingdata = [
     product_id: 6,
   },
   {
-    review: "Yo Avocado Toast is so good!",
+    review:
+      "Yo Avocado Toast is so good! The nachos weren't loaded enough though.",
+    account_id: 4,
+    product_id: 7,
+  },
+  {
+    review: "The Devlore burger is crazy good.",
     account_id: 4,
     product_id: 7,
   },
