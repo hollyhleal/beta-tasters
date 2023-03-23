@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sendEmail = require("../../utils/emails");
 
+//localhost:3001/api/contact
 router.get("/", async (req, res) => {
   try {
     res.render("contact", {});
@@ -9,5 +10,4 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-router.post
+module.exports = router;

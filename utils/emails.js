@@ -1,6 +1,6 @@
 
 const nodemailer = require("nodemailer");
-console.log(process.env);
+
 
 module.exports = (email, msg) => {
   const transporter = nodemailer.createTransport({
