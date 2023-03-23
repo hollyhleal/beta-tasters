@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection.js');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection.js");
 
 class Food extends Model {}
 
@@ -19,12 +19,19 @@ Food.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    management_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Management",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Food',
+    modelName: "Food",
   }
 );
 

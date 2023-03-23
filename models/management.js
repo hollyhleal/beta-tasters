@@ -7,7 +7,7 @@ class Management extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-//rANDOM
+
 Management.init(
   {
     id: {
