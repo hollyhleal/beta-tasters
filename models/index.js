@@ -13,13 +13,9 @@ Rating.belongsTo(Beta, {
   foreignKey: "user_id",
 });
 
-// Beta.hasMany(Rating, {
-//   foreignKey: "user_id",
-// });
-
-// Rating.belongsTo(Beta, {
-//   foreignKey: "user_id",
-//   onDelete: "CASCADE",
-// });
+Food.hasMany(Rating);
+Rating.belongsTo(Food, {
+  foreignKey: "food_id",
+});
 
 module.exports = { Rating, Food, Beta, Mange };
