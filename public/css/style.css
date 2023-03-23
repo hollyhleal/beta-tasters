@@ -28,7 +28,7 @@ main {
   background-color: var(--beige);
 }
 
-#menu-user-h2 {
+.page-header {
   color: var(--darkgreen);
   font-family: var(--bodyfont);
   text-align: center;
@@ -38,12 +38,16 @@ main {
   background-color: var(--darkgreen);
 }
 
-#review-user-h2 {
+/* #review-user-h2 {
   color: var(--darkgreen);
   font-family: var(--bodyfont);
   text-align: center;
-}
+} */
 
 #user-dropdown-btn {
+  background-color: var(--blue);
+}
+
+#user-submit-review-btn {
   background-color: var(--blue);
 }
