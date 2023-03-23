@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
       betatasters.get({ plain: true })
     );
 
-    res.render("view-rev-user", {
+    res.render("reviews-mgr", {
       betatasters,
       loggedIn: req.session.loggedIn,
     });
