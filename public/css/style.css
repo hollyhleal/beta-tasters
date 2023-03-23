@@ -47,3 +47,7 @@ main {
 #user-dropdown-btn {
   background-color: var(--blue);
 }
+
+#user-submit-review-btn {
+  background-color: var(--blue);
+}

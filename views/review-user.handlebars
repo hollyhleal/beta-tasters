@@ -15,48 +15,53 @@
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-          >
+        >
             Menu Items
           </button>
+          {{!-- currently not capturing the value of the menu item selected from the dropdown. --}}
           <ul class="dropdown-menu">
-            <li><button class="dropdown-item" type="button">Menu Item 1</button></li>
-            <li><button class="dropdown-item" type="button">Menu Item 2</button></li>
-            <li><button class="dropdown-item" type="button">Menu Item 3</button></li>
-            <li><button class="dropdown-item" type="button">Menu Item 4</button></li>
-            <li><button class="dropdown-item" type="button">Menu Item 5</button></li>
-            <li><button class="dropdown-item" type="button">Menu Item 6</button></li>
-            <li><button class="dropdown-item" type="button">Menu Item 7</button></li>
-            <li><button class="dropdown-item" type="button">Menu Item 8</button></li>
+            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 1</button></li>
+            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 2</button></li>
+            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 3</button></li>
+            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 4</button></li>
+            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 5</button></li>
+            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 6</button></li>
+            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 7</button></li>
+            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 8</button></li>
           </ul>
+        
           
           {{!-- checkboxes for grabbing the users rating for each dish --}}
           <div class="mt-5">
             <h4>Please provide a rating for this menu item: </h4>
             <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1-star">
   <label class="form-check-label" for="inlineRadio1">1</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2-star">
   <label class="form-check-label" for="inlineRadio2">2</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3-star">
   <label class="form-check-label" for="inlineRadio3">3</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" disabled>
-  <label class="form-check-label" for="inlineRadio3">4</label>
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4-star">
+  <label class="form-check-label" for="inlineRadio4">4</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" disabled>
-  <label class="form-check-label" for="inlineRadio3">5</label>
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5-star">
+  <label class="form-check-label" for="inlineRadio5">5</label>
 </div>
 
+{{!-- textarea for user review input --}}
 <div class="mt-5">
-  <h4></h4>
+  <h4 class="justify-content-around">Review: </h4>
+  <textarea name="review" id="user-review-input" cols="30" rows="10"></textarea>
 
 </div>
+<button type="submit" class="btn btn-lg mt-5" id="user-submit-review-btn">Post Review</button>
           </div>
         </form>
         </div>
