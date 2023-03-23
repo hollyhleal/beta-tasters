@@ -1,0 +1,95 @@
+<section class="landing">
+  <div class="container">
+    <div class="row"><h2>Beta Taster</h2></div>
+    <div class="row">
+      {{! <button href="#" type="button" class="btn btn-primary btn-lg">Create Account</button> }}
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Create Account
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Beta Taster -
+                Create Account</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+                <form action="/example" method="POST">
+              <label class="form-label" for="createUserName">Username:</label>
+              <input
+                type="text"
+                id="createUserName"
+                name="username"
+                class="form-control form-control-lg"
+              />
+              <label class="form-label" for="createUserEmail">Email:</label>
+              <input
+                type="text"
+                id="createUserEmail"
+                name="email"
+                class="form-control form-control-lg"
+              />
+              <label
+                class="form-label"
+                for="createUserPassword"
+              >Password:</label>
+              <input
+                type="password"
+                id="createUserPassword"
+                name="password"
+                class="form-control form-control-lg"
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >Close</button>
+              <button type="submit" class="btn btn-primary">Create Account</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <button
+        href="#"
+        type="button"
+        class="btn btn-secondary btn-lg"
+      >Login</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row"><h2>DevLore Cafe Management</h2></div>
+    <div class="row">
+      <button href="#" type="button" class="btn btn-primary btn-lg">Create
+        Account</button>
+      <button
+        href="#"
+        type="button"
+        class="btn btn-secondary btn-lg"
+      >Login</button>
+    </div>
+  </div>
+</section>
