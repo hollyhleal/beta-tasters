@@ -4,7 +4,7 @@ const transporter = nodemailer.createTransport({
   service: "hotmail",
   auth: {
     user: "DevloreCafe@outlook.com",
-    pass: "Colorado2018!",
+    pass: process.env.EMAIL_PW,
   },
 });
 
@@ -22,5 +22,3 @@ transporter.sendMail(options, (err, info) => {
   }
   console.log("Sent" + info.response);
 });
-
-
