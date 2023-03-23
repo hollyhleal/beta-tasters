@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Mange } = require('../../models');
 
 
 
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.create({
+    const dbMangeData = await Mange.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json(dbMangeData);
     });
   } catch (err) {
     console.log(err);
@@ -25,20 +25,20 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const dbMangeData = await User.findOne({
       where: {
         email: req.body.email,
       },
     });
 
-    if (!dbUserData) {
+    if (!dbMangeData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = await dbMangeData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: dbMangeData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);
