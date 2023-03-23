@@ -28,13 +28,13 @@
         <ul>
           <li class="li-inline nav-item"></li><a href="#">Contact Us</a></li>
           {{#if loggedInUser}}
-            <li class="li-inline nav-item"><a href="#">Menu</a></li>
-            <li class="li-inline nav-item"></li><a href="#">Post a Review</a></li>
+            <li class="li-inline nav-item"><a href="../menu-user.handlebars">Menu</a></li>
+            <li class="li-inline nav-item"></li><a href="../review-user.handlebars">Post a Review</a></li>
             <li class="li-inline nav-item"></li><a href="#">Logout</a></li>
           {{else}}
             {{#if loggedInManager}}
-              <li class="li-inline nav-item"></li><a href="#">Update Menu</a></li>
-              <li class="li-inline nav-item"></li><a href="#">Reviews</a></li>
+              <li class="li-inline nav-item"></li><a href="../menu-mgr.handlebars">Update Menu</a></li>
+              <li class="li-inline nav-item"></li><a href="../reviews-mgr.handlebars">Reviews</a></li>
               <li class="li-inline nav-item"></li><a href="#">Logout</a></li>
             {{/if}}
           {{/if}}
