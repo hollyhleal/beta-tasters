@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
       betatasters.get({ plain: true })
     );
 
-    res.render("login-user", {
+    res.render("view-rev-user", {
       betatasters,
       loggedIn: req.session.loggedIn,
     });
@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 });
 
 // Front-end test route
-router.post("/betareview", async (req, res) => {
+router.post("/betaViewReview", async (req, res) => {
   try {
     console.log("=====");
     console.log(req.body);
