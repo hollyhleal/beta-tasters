@@ -1,10 +1,10 @@
 const Rating = require("./Rating.js");
 const Food = require("./Food.js");
 const Beta = require("./BetaTaster.js");
-const Mange = require("./management.js");
+const Manage = require("./management.js");
 
-Mange.hasMany(Food);
-Food.belongsTo(Mange, {
+Manage.hasMany(Food);
+Food.belongsTo(Manage, {
   foreignKey: "management_id",
 });
 
@@ -18,4 +18,4 @@ Rating.belongsTo(Food, {
   foreignKey: "food_id",
 });
 
-module.exports = { Rating, Food, Beta, Mange };
+module.exports = { Rating, Food, Beta, Manage };
