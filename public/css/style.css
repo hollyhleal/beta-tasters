@@ -17,6 +17,7 @@
 
 .navbar {
   background-color: var(--blue);
+  color: var(--lightgreen);
 }
 
 footer {

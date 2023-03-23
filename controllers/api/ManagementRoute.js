@@ -1,11 +1,9 @@
-const router = require('express').Router();
-const { Mange } = require('../../models');
+const router = require("express").Router();
+const { Manage } = require("../../models");
 
-
-
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const dbMangeData = await Mange.create({
+    const dbManageData = await Manage.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
@@ -14,7 +12,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.status(200).json(dbMangeData);
+      res.status(200).json(dbManageData);
     });
   } catch (err) {
     console.log(err);
@@ -22,28 +20,27 @@ router.post('/', async (req, res) => {
   }
 });
 
-
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
-    const dbMangeData = await User.findOne({
+    const dbManageData = await User.findOne({
       where: {
         email: req.body.email,
       },
     });
 
-    if (!dbMangeData) {
+    if (!dbManageData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
-    const validPassword = await dbMangeData.checkPassword(req.body.password);
+    const validPassword = await dbManageData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
@@ -52,7 +49,7 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ user: dbMangeData, message: 'You are now logged in!' });
+        .json({ user: dbManageData, message: "You are now logged in!" });
     });
   } catch (err) {
     console.log(err);

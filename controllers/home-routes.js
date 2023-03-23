@@ -10,9 +10,10 @@ router.get("/", async (req, res) => {
       betatasters.get({ plain: true })
     );
 
-    res.render("reviews-mgr", {
+    res.render("landing", {
       betatasters,
-      loggedIn: req.session.loggedIn,
+      loggedInUser: req.session.loggedInUser, //can set to true/false for testing
+      loggedInManager: req.session.loggedInManager, //can set to true/false for testing
     });
   } catch (err) {
     console.log(err);
@@ -21,7 +22,7 @@ router.get("/", async (req, res) => {
 });
 
 // Front-end test route
-router.post("/betaViewReview", async (req, res) => {
+router.post("/loggedIn", async (req, res) => {
   try {
     console.log("=====");
     console.log(req.body);
