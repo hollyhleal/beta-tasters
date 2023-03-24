@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Beta, Rating, Food, Mange } = require("../models");
+const { Beta, Rating, Food, Manage } = require("../models");
 const sendEmail = require("../utils/emails");
 
 router.get("/", async (req, res) => {
