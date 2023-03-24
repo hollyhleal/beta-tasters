@@ -1,9 +1,7 @@
-const router = require('express').Router();
-const { Beta } = require('../../models');
+const router = require("express").Router();
+const { Beta } = require("../../models");
 
-
-
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const dbBetaData = await Beta.create({
       username: req.body.username,
@@ -23,7 +21,7 @@ router.post('/', async (req, res) => {
 });
 
 // Login
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const dbBetaData = await Beta.findOne({
       where: {
@@ -34,7 +32,7 @@ router.post('/login', async (req, res) => {
     if (!dbBetaData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
@@ -43,7 +41,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
@@ -52,10 +50,12 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ user: dbBetaData, message: 'You are now logged in!' });
+        .json({ user: dbBetaData, message: "You are now logged in!" });
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
