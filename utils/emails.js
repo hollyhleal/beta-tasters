@@ -2,19 +2,23 @@ const nodemailer = require("nodemailer");
 
 module.exports = (email, msg, firstName, lastName) => {
   const transporter = nodemailer.createTransport({
-    service: "hotmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
-      user: "DevloreCafe@outlook.com",
+      user: "devlorecafe@gmail.com",
       pass: process.env.PASSWORD_EMAIL,
     },
   });
 
   const options = {
-    from: "DevloreCafe@outlook.com",
-    to: email,
+    from: email,
+    to: "devlorecafe@gmail.com",
     subject: "New Response",
     text: `Message from ${firstName}  ${lastName}!
-    They say:  ${msg}`,
+    They say:  ${msg}
+    
+    They can be reached at ${email}`,
   };
 
   return transporter.sendMail(options, (err, info) => {
