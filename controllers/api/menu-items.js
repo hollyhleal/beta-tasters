@@ -1,20 +1,6 @@
 const router = require("express").Router();
 const { Food } = require("../../models");
 
-// add dish
-router.post("/", async (req, res) => {
-  try {
-    const foodData = await Food.create({
-      Food_name: req.body.food_name,
-      description: req.body.description,
-      price: req.body.price,
-    });
-    res.status(200).json(foodData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
 // create a new menu item
 router.post("/", async (req, res) => {
   try {

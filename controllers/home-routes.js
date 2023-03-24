@@ -25,7 +25,8 @@ router.get("/", async (req, res) => {
 });
 
 // GET contact page
-router.get("/", async (req, res) => {
+//http://localhost:3001/contact
+router.get("/contact", async (req, res) => {
   try {
     res.render("contact", {});
   } catch (err) {
@@ -35,7 +36,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET all food items page
-router.get("/", async (req, res) => {
+router.get("/menu-items", async (req, res) => {
   try {
     const foodData = await Food.findAll({
       include: [{ model: Food }],
@@ -61,7 +62,7 @@ router.get("/menu-item/:id", async (req, res) => {
 });
 
 // GET menu-mgr
-router.get("/", async (req, res) => {
+router.get("/menu-mgr", async (req, res) => {
   try {
     res.render("menu-mgr", {});
   } catch (err) {
@@ -71,7 +72,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET menu-user
-router.get("/", async (req, res) => {
+router.get("/menu-user", async (req, res) => {
   try {
     res.render("menu-user", {});
   } catch (err) {
@@ -81,7 +82,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET review-user
-router.get("/", async (req, res) => {
+router.get("/review-user", async (req, res) => {
   try {
     res.render("review-user", {});
   } catch (err) {
@@ -91,7 +92,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET reviews-mgr
-router.get("/", async (req, res) => {
+router.get("/reviews-mgr", async (req, res) => {
   try {
     res.render("reviews-mgr", {});
   } catch (err) {
@@ -101,7 +102,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET view review user
-router.get("/", async (req, res) => {
+router.get("/view-review-user", async (req, res) => {
   try {
     res.render("view-review-user", {});
   } catch (err) {
