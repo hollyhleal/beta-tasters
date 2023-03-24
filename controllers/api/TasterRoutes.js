@@ -12,8 +12,7 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      // res.status(200).json(dbBetaData);
-      res.redirect("/menu-user");
+      res.status(200).json(dbBetaData);
     });
   } catch (err) {
     console.log(err);
