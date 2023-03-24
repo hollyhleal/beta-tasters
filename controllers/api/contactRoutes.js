@@ -12,12 +12,11 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  res.status(200).json(console.log(req.body));
-
-  // try {
-
-  // } catch (err) {
-  //   res.status(500).json(err);
-  // }
+  try {
+    console.log(req.body);
+    res.status(200);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 module.exports = router;

@@ -11,21 +11,24 @@ const newFormHandler = async function (event) {
   const phoneNumber = document.querySelector('input[name="phoneNumber"]').value;
   const comments = document.querySelector('textarea[name="comments"]').value;
 
-  console.log(firstName);
-
-  //   if (comments) {
-  //     await fetch("/api/contact", {
-  //       method: "POST",
-  //       body: json.stringify({
-  //         firstName,
-  //         lastName,
-  //         email,
-  //         phoneNumber,
-  //         comments,
-  //       }),
-  //     });
-  //     document.location.reload();
-  //   }
+  const response = await fetch(`/api/contact`, {
+    method: "POST",
+    body: JSON.stringify({
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      comments,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (response.ok) {
+    document.location.replace("/");
+    alert("Email was Sent!");
+  } else {
+    alert("Failed to Send Email");
+  }
 };
-
 subBtn.addEventListener("click", newFormHandler);

@@ -1,10 +1,10 @@
-
 const nodemailer = require("nodemailer");
 
-
-module.exports = (email, msg) => {
+module.exports = (email, msg, firstName, lastName) => {
   const transporter = nodemailer.createTransport({
     service: "hotmail",
+    port: 465,
+    secure: true,
     auth: {
       user: "DevloreCafe@outlook.com",
       pass: process.env.PASSWORD_EMAIL,
@@ -13,9 +13,11 @@ module.exports = (email, msg) => {
 
   const options = {
     from: "DevloreCafe@outlook.com",
-    to: "mount.photos@gmail.com",
-    subject: "Email",
-    text: "WE didn't do it",
+    to: email,
+    subject: "New Response",
+    text: `<h1>Message from ${firstName}  ${lastName}!<h2>
+    <p> They say:  ${msg} </p
+    `,
   };
 
   return transporter.sendMail(options, (err, info) => {
