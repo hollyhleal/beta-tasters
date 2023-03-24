@@ -28,13 +28,13 @@
         <ul class="navbar-nav flex-row ms-auto">
           <li class="li-inline nav-item m-2"></li><a href="#">Contact Us</a></li>
           {{#if loggedInUser}}
-            <li class="li-inline nav-item m-2"><a href="../menu-user.handlebars">Menu</a></li>
-            <li class="li-inline nav-item m-2"></li><a href="../review-user.handlebars">Post a Review</a></li>
+            <li class="li-inline nav-item m-2"><a href="/menu-user">Menu</a></li>
+            <li class="li-inline nav-item m-2"></li><a href="/review-user">Post a Review</a></li>
             <li class="li-inline nav-item m-2"></li><a href="#">Logout</a></li>
           {{else}}
             {{#if loggedInManager}}
-              <li class="li-inline nav-item m-2"></li><a href="../menu-mgr.handlebars">Update Menu</a></li>
-              <li class="li-inline nav-item m-2"></li><a href="../reviews-mgr.handlebars">Reviews</a></li>
+              <li class="li-inline nav-item m-2"></li><a href="/menu-mgr">Update Menu</a></li>
+              <li class="li-inline nav-item m-2"></li><a href="/reviews-mgr">Reviews</a></li>
               <li class="li-inline nav-item m-2"></li><a href="#">Logout</a></li>
             {{/if}}
           {{/if}}
