@@ -19,6 +19,10 @@ Food.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
     management_id: {
       type: DataTypes.INTEGER,
       references: {
