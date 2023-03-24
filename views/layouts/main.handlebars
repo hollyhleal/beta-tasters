@@ -19,28 +19,29 @@
     />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body class="flex-column min-100-vh">
     <header>
       <h1 class="logo">DevLore Cafe</h1>
     </header>
-    <div class="container">
-      <nav class="navbar">
-        <ul>
-          <li class="li-inline nav-item"></li><a href="#">Contact Us</a></li>
+    <nav class="navbar">
+    <div class="container-fluid">
+        <ul class="navbar-nav flex-row ms-auto">
+          <li class="li-inline nav-item m-2"></li><a href="#">Contact Us</a></li>
           {{#if loggedInUser}}
-            <li class="li-inline nav-item"><a href="../menu-user.handlebars">Menu</a></li>
-            <li class="li-inline nav-item"></li><a href="../review-user.handlebars">Post a Review</a></li>
-            <li class="li-inline nav-item"></li><a href="#">Logout</a></li>
+            <li class="li-inline nav-item m-2"><a href="../menu-user.handlebars">Menu</a></li>
+            <li class="li-inline nav-item m-2"></li><a href="../review-user.handlebars">Post a Review</a></li>
+            <li class="li-inline nav-item m-2"></li><a href="#">Logout</a></li>
           {{else}}
             {{#if loggedInManager}}
-              <li class="li-inline nav-item"></li><a href="../menu-mgr.handlebars">Update Menu</a></li>
-              <li class="li-inline nav-item"></li><a href="../reviews-mgr.handlebars">Reviews</a></li>
-              <li class="li-inline nav-item"></li><a href="#">Logout</a></li>
+              <li class="li-inline nav-item m-2"></li><a href="../menu-mgr.handlebars">Update Menu</a></li>
+              <li class="li-inline nav-item m-2"></li><a href="../reviews-mgr.handlebars">Reviews</a></li>
+              <li class="li-inline nav-item m-2"></li><a href="#">Logout</a></li>
             {{/if}}
           {{/if}}
         </ul>
-      </nav>
     </div>
+    </nav>
+    
     <main>
       <div>
         {{{body}}}
