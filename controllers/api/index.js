@@ -1,11 +1,11 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-const betaRoutes = require('./betalogin-routes');
+//const betaRoutes = require('./betalogin-routes');
 
-const MangeRoutes = require('./Mangelogin-routes');
+//const ManageRoutes = require('./Managelogin-routes');
 
-router.use('/betalogin', betaRoutes);
+//router.use("/betalogin", betaRoutes);
 
-router.use('/Mangelogin', MangeRoutes);
+//router.use("/Managelogin", ManageRoutes);
 
 module.exports = router;
