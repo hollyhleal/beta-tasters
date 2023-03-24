@@ -13,7 +13,10 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body);
+    const { firstName, lastName, email, comments } = req.body;
+
+    sendEmail(email, comments, firstName, lastName);
+
     res.status(200);
   } catch (err) {
     res.status(500).json(err);
