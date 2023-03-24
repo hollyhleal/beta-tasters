@@ -13,13 +13,13 @@ const seedAll = async () => {
 
   console.log("\n----- MANAGEMENT SEEDED -----\n");
 
-  await seedBeta();
-
-  console.log("\n----- BETATASTERS SEEDED -----\n");
-
   await seedFood();
 
   console.log("\n----- FOOD SEEDED -----\n");
+
+  await seedBeta();
+
+  console.log("\n----- BETATASTERS SEEDED -----\n");
 
   await seedRatings();
 

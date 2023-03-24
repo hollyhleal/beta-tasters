@@ -22,6 +22,6 @@ module.exports = (email, msg, firstName, lastName) => {
       console.log(err);
       return;
     }
-    console.log("Sent" + info.response);
+    console.log(`Email ${info.response} was successfully sent`);
   });
 };
