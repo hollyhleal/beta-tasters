@@ -15,6 +15,15 @@
   color: var(--lightgreen);
 }
 
+header {
+  background-color: var(--beige);
+}
+
+a {
+  text-decoration: none;
+  color: var(--beige);
+}
+
 .navbar {
   background-color: var(--blue);
   color: var(--lightgreen);
@@ -23,6 +32,7 @@
 footer {
   background-color: var(--blue);
   color: var(--lightgreen);
+  text-align: center;
 }
 
 main {
@@ -45,8 +55,12 @@ main {
   text-align: center;
 } */
 
-#user-dropdown-btn {
+.user-dropdown-btn {
   background-color: var(--blue);
+}
+
+.user-dropdown-btn:hover {
+  background-color: rgb(152, 171, 179);
 }
 
 #user-submit-review-btn {
