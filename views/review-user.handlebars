@@ -5,13 +5,14 @@
   <div class="container">
     <div class="card">
       <div class="card-body">
-        <form action="/betaNewReview" method="POST">
+        <!-- route: /api/ratings -->
+        <form action="/api/ratings" method="POST">
         
         {{!-- dropdown menu for menu items --}}
         <div class="dropdown text-center">
           <button
-            class="btn dropdown-toggle"
-            id="user-dropdown-btn"
+            class="btn dropdown-toggle user-dropdown-btn"
+            id="user-rev-drpdwn-btn"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -20,14 +21,9 @@
           </button>
           {{!-- currently not capturing the value of the menu item selected from the dropdown. --}}
           <ul class="dropdown-menu">
-            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 1</button></li>
-            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 2</button></li>
-            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 3</button></li>
-            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 4</button></li>
-            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 5</button></li>
-            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 6</button></li>
-            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 7</button></li>
-            <li><button class="dropdown-item" type="button" name="menuOptions">Menu Item 8</button></li>
+            {{#each foods}}
+            <li><button class="dropdown-item" type="button" name="menuOptions">{{Food_name}}</button></li>
+            {{/each}}
           </ul>
         
           
