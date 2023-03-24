@@ -45,5 +45,4 @@ Management.init(
     modelName: "Management",
   }
 );
-
 module.exports = Management;

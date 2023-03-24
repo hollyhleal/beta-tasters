@@ -1,4 +1,4 @@
-const { ManageSeed } = require("../models");
+const { Manage } = require("../models");
 
 const ManageData = [
   {
@@ -27,6 +27,6 @@ const ManageData = [
   },
 ];
 
-const seedManage = () => ManageSeed.bulkCreate(ManageData);
+const seedManage = () => Manage.bulkCreate(ManageData);
 
 module.exports = seedManage;
