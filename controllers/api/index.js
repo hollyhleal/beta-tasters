@@ -1,11 +1,14 @@
 const router = require("express").Router();
-
+const menuItemsRoute = require("./menu-items");
+const ratingsRoute = require("./ratings");
 const betaRoutes = require("./TasterRoutes");
-const MangeRoutes = require("./ManagementRoute");
+const ManageRoutes = require("./ManagementRoute");
 const contactRoutes = require("./contactRoutes");
 
+router.use("/menu-items", menuItemsRoute);
+router.use("/ratings", ratingsRoute);
 router.use("/betalogin", betaRoutes);
-router.use("/Mangelogin", MangeRoutes);
+router.use("/Managelogin", ManageRoutes);
 router.use("/contact", contactRoutes);
 
 module.exports = router;
