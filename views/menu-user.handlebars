@@ -4,20 +4,15 @@
     <h2 class="page-header">Welcome! Take a look at our menu in development...</h2>
   </div>
   <div class="container">
+
     <div class="card">
-      {{! card containing the menu item name and description }}
+      <!-- card containing the menu item name and description -->
       <div class="card-body">
         <ul class="list-group list-group-flush">
-          <h4>Breakfast Sandwich</h4>
-          <li class="list-group-item">Description</li>
-          <h4>Breakfast Burrito</h4>
-          <li class="list-group-item">Description</li>
-          <h4>Menu Item</h4>
-          <li class="list-group-item">Description</li>
-          <h4>Menu Item</h4>
-          <li class="list-group-item">Description</li>
-          <h4>Menu Item</h4>
-          <li class="list-group-item">Description</li>
+          {{#each foods}}
+            <h4>{{Food_name}}</h4>
+            <li class="list-group-item">{{description}}</li>
+          {{/each}}
         </ul>
       </div>
     </div>

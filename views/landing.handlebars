@@ -14,7 +14,7 @@
       </button>
 
       <!-- Modal - Beta Taster Create Account -->
-      <!-- route: /betacreate -->
+      <!-- route: /api/betalogin -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -85,7 +85,7 @@
       </button>
 
       <!-- Modal - Beta Taster Login -->
-      <!-- route: /betalogin -->
+      <!-- route: /api/betalogin/login -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -106,7 +106,7 @@
               ></button>
             </div>
             <div class="modal-body">
-                <form action="/betalogin" method="POST">
+                <form action="/api/betalogin/login" method="POST">
               <label class="form-label" for="userEmail">Email:</label>
               <input
                 type="text"
@@ -155,7 +155,7 @@
       </button>
 
       <!-- Modal - Management Create Account -->
-      <!-- route: /mgrcreate -->
+      <!-- route: /api/Managelogin -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -176,12 +176,12 @@
               ></button>
             </div>
             <div class="modal-body">
-                <form action="/mgrcreate" method="POST">
+                <form action="/api/Managelogin" method="POST">
               <label class="form-label" for="createMgrEmail">Email:</label>
               <input
                 type="text"
                 id="createMgrEmail"
-                name="email"
+                name="createMgrEmail"
                 class="form-control form-control-lg"
               />
               <label
@@ -191,7 +191,7 @@
               <input
                 type="password"
                 id="createMgrPassword"
-                name="password"
+                name="createMgrPassword"
                 class="form-control form-control-lg"
               />
             </div>
@@ -219,7 +219,7 @@
       </button>
 
       <!-- Modal - Management Login -->
-      <!-- route: /mgrlogin -->
+      <!-- route: /api/Managelogin/login -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -240,7 +240,7 @@
               ></button>
             </div>
             <div class="modal-body">
-                <form action="/mgrlogin" method="POST">
+                <form action="/api/Managelogin/login" method="POST">
               <label class="form-label" for="mgrEmail">Email:</label>
               <input
                 type="text"
