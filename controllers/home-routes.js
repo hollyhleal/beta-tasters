@@ -11,7 +11,6 @@ router.get("/", async (req, res) => {
     const betatasters = betatasterData.map((betatasters) =>
       betatasters.get({ plain: true })
     );
-    sendEmail();
 
     res.render("landing", {
       betatasters,

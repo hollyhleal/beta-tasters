@@ -10,4 +10,14 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.post("/", async (req, res) => {
+  res.status(200).json(console.log(req.body));
+
+  // try {
+
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+});
 module.exports = router;
