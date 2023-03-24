@@ -10,7 +10,7 @@ const ratingdata = [
   {
     review:
       "Eww, more Avocado Toast. Can't these gen Z and Millennials just eat pancakes like the rest of us!",
-      rating: 2,
+    rating: 2,
     user_id: 2,
     food_id: 7,
   },
@@ -23,14 +23,14 @@ const ratingdata = [
   {
     review:
       "Other than Pancakes, French Toast is my next favorite Breakfast Food!",
-      rating: 3,
+    rating: 3,
     user_id: 1,
     food_id: 6,
   },
   {
     review:
       "Yo Avocado Toast is so good! The nachos weren't loaded enough though.",
-      rating: 3,
+    rating: 3,
     account_id: 4,
     product_id: 7,
   },
