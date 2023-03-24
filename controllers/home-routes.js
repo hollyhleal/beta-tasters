@@ -36,6 +36,7 @@ router.get("/contact", async (req, res) => {
 });
 
 // GET all food items page
+//http://localhost:3001/menu-items
 router.get("/menu-items", async (req, res) => {
   try {
     const foodData = await Food.findAll({
@@ -48,6 +49,7 @@ router.get("/menu-items", async (req, res) => {
 });
 
 // GET food item by id page
+//http://localhost:3001/menu-item/:id
 router.get("/menu-item/:id", async (req, res) => {
   try {
     const foodId = await Food.findByPk(req.params.id);
@@ -62,6 +64,7 @@ router.get("/menu-item/:id", async (req, res) => {
 });
 
 // GET menu-mgr
+//http://localhost:3001/menu-mgr
 router.get("/menu-mgr", async (req, res) => {
   try {
     res.render("menu-mgr", {});
@@ -72,6 +75,7 @@ router.get("/menu-mgr", async (req, res) => {
 });
 
 // GET menu-user
+//http://localhost:3001/menu-user
 router.get("/menu-user", async (req, res) => {
   try {
     res.render("menu-user", {});
@@ -82,6 +86,7 @@ router.get("/menu-user", async (req, res) => {
 });
 
 // GET review-user
+//http://localhost:3001/review-user
 router.get("/review-user", async (req, res) => {
   try {
     res.render("review-user", {});
@@ -92,6 +97,7 @@ router.get("/review-user", async (req, res) => {
 });
 
 // GET reviews-mgr
+//http://localhost:3001/reviews-mgr
 router.get("/reviews-mgr", async (req, res) => {
   try {
     res.render("reviews-mgr", {});
@@ -102,6 +108,7 @@ router.get("/reviews-mgr", async (req, res) => {
 });
 
 // GET view review user
+//http://localhost:3001/view-review-user
 router.get("/view-review-user", async (req, res) => {
   try {
     res.render("view-review-user", {});
