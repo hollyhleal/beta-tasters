@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const { Beta, Rating, Food, Mange } = require("../models");
+const sendEmail = require("../utils/emails");
+
 router.get("/", async (req, res) => {
   try {
     const betatasterData = await Beta.findAll({}).catch((err) => {

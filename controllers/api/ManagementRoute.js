@@ -4,7 +4,6 @@ const { Manage } = require("../../models");
 router.post("/", async (req, res) => {
   try {
     const dbManageData = await Manage.create({
-      username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
@@ -56,3 +55,5 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;

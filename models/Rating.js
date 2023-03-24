@@ -15,20 +15,20 @@ Rating.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   // references: {
-    //   //   model: "BetaTaster",
-    //   //   key: "id",
-    //   // },
-    // },
-    // food_id: {
-    //   type: DataTypes.INTEGER,
-    //   // references: {
-    //   //   model: "Food",
-    //   //   key: "id",
-    //   // },
-    // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "BetaTaster",
+        key: "id",
+      },
+    },
+    food_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Food",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
