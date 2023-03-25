@@ -5,16 +5,16 @@ const sendEmail = require("../utils/emails");
 // GET landing page
 router.get("/", async (req, res) => {
   try {
-    const betatasterData = await Beta.findAll({}).catch((err) => {
-      res.json(err);
-    });
+    // const betatasterData = await Beta.findAll({}).catch((err) => {
+    //   res.json(err);
+    // });
 
-    const betatasters = betatasterData.map((betatasters) =>
-      betatasters.get({ plain: true })
-    );
+    // const betatasters = betatasterData.map((betatasters) =>
+    //   betatasters.get({ plain: true })
+    // );
 
     res.render("landing", {
-      betatasters,
+      // betatasters,
       loggedInUser: req.session.loggedInUser, //can set to true/false for testing
       loggedInManager: req.session.loggedInManager, //can set to true/false for testing
     });
@@ -36,6 +36,7 @@ router.get("/contact", async (req, res) => {
 });
 
 // GET all food items page
+// Not working - Not needed
 //http://localhost:3001/menu-items
 router.get("/menu-items", async (req, res) => {
   try {
@@ -49,6 +50,7 @@ router.get("/menu-items", async (req, res) => {
 });
 
 // GET food item by id page
+// Not working - Not needed
 //http://localhost:3001/menu-item/:id
 router.get("/menu-item/:id", async (req, res) => {
   try {
@@ -64,10 +66,14 @@ router.get("/menu-item/:id", async (req, res) => {
 });
 
 // GET menu-mgr
+// Working
 //http://localhost:3001/menu-mgr
 router.get("/menu-mgr", async (req, res) => {
   try {
-    res.render("menu-mgr", {});
+    res.render("menu-mgr", {
+      loggedInUser: false,
+      loggedInManager: true,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -75,10 +81,14 @@ router.get("/menu-mgr", async (req, res) => {
 });
 
 // GET menu-user
+// Working
 //http://localhost:3001/menu-user
 router.get("/menu-user", async (req, res) => {
   try {
-    res.render("menu-user", {});
+    res.render("menu-user", {
+      loggedInUser: true,
+      loggedInManager: false,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -86,6 +96,7 @@ router.get("/menu-user", async (req, res) => {
 });
 
 // GET review-user
+// Working
 //http://localhost:3001/review-user
 router.get("/review-user", async (req, res) => {
   try {
@@ -98,6 +109,7 @@ router.get("/review-user", async (req, res) => {
 
 // GET reviews-mgr
 //http://localhost:3001/reviews-mgr
+// Working
 router.get("/reviews-mgr", async (req, res) => {
   try {
     res.render("reviews-mgr", {});
@@ -108,10 +120,11 @@ router.get("/reviews-mgr", async (req, res) => {
 });
 
 // GET view review user
+// Working - but needs to include id
 //http://localhost:3001/view-review-user
-router.get("/view-review-user", async (req, res) => {
+router.get("/view-rev-user", async (req, res) => {
   try {
-    res.render("view-review-user", {});
+    res.render("view-rev-user", {});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
