@@ -10,24 +10,21 @@
         
         {{!-- dropdown menu for menu items --}}
         <div class="dropdown text-center">
-          <button
-            class="btn dropdown-toggle user-dropdown-btn"
-            id="user-rev-drpdwn-btn"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-        >
-            Menu Items
-          </button>
-          {{!-- currently not capturing the value of the menu item selected from the dropdown. --}}
-          <ul class="dropdown-menu">
-            {{#each foods}}
-            <li><button class="dropdown-item" type="button" name="menuOptions">{{Food_name}}</button></li>
-            {{/each}}
-          </ul>
+          <div class="input-group mb-3">
+            <span
+              class="input-group-text"
+              id="inputGroup-sizing-default"
+            >Menu Item:</span>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
         
           
-          {{!-- checkboxes for grabbing the users rating for each dish --}}
+          {{!-- checkboxes for grabbing the user's rating --}}
           <div class="mt-5">
             <h4>Please provide a rating for this menu item: </h4>
             <div class="form-check form-check-inline">
@@ -52,11 +49,14 @@
 </div>
 
 {{!-- textarea for user review input --}}
-<div class="mt-5">
-  <h4 class="justify-content-around">Review: </h4>
-  <textarea name="review" id="user-review-input" cols="30" rows="10"></textarea>
+<div class="input-group">
+            <span class="input-group-text">Review:</span>
+            <textarea
+              class="form-control"
+              aria-label="With textarea"
+            ></textarea>
+          </div>
 
-</div>
 <button type="submit" class="btn btn-lg mt-5" id="user-submit-review-btn">Post Review</button>
           </div>
         </form>
