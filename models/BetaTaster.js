@@ -32,7 +32,7 @@ BetaTaster.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [2, 20],
+        len: [5, 20],
       },
     },
   },
