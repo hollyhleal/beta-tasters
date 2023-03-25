@@ -110,7 +110,10 @@ router.get("/menu-user", async (req, res) => {
 //http://localhost:3001/review-user
 router.get("/review-user", async (req, res) => {
   try {
-    res.render("review-user", {});
+    res.render("review-user", {
+      loggedInUser: true,
+      loggedInManager: false,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -122,7 +125,10 @@ router.get("/review-user", async (req, res) => {
 // Working
 router.get("/reviews-mgr", async (req, res) => {
   try {
-    res.render("reviews-mgr", {});
+    res.render("reviews-mgr", {
+      loggedInUser: false,
+      loggedInManager: true,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -134,7 +140,10 @@ router.get("/reviews-mgr", async (req, res) => {
 //http://localhost:3001/view-review-user
 router.get("/view-rev-user", async (req, res) => {
   try {
-    res.render("view-rev-user", {});
+    res.render("view-rev-user", {
+      loggedInUser: true,
+      loggedInManager: false,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
