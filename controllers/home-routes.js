@@ -38,16 +38,19 @@ router.get("/contact", async (req, res) => {
 // GET all food items page
 // Not working - Not needed
 //http://localhost:3001/menu-items
-router.get("/menu-items", async (req, res) => {
-  try {
-    const foodData = await Food.findAll({
-      include: [{ model: Food }],
-    });
-    res.render("menu-items", { foodData });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+// router.get("/menu-items", async (req, res) => {
+//   try {
+//     const foodData = await Food.findAll({
+//       include: [{ model: Food }],
+//     });
+
+//     const foods = foodData.map((food) => food.get({ plain: true }));
+
+//     res.render("menu-items", { foods });
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 // GET food item by id page
 // Not working - Not needed
@@ -85,7 +88,14 @@ router.get("/menu-mgr", async (req, res) => {
 //http://localhost:3001/menu-user
 router.get("/menu-user", async (req, res) => {
   try {
+    const foodData = await Food.findAll({
+      // include: [{ model: Food }],
+    });
+
+    const foods = foodData.map((food) => food.get({ plain: true }));
+
     res.render("menu-user", {
+      foods,
       loggedInUser: true,
       loggedInManager: false,
     });
