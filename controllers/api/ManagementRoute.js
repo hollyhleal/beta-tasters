@@ -9,9 +9,9 @@ router.post("/", async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.loggedInManager = true;
 
-      res.status(200).json(dbManageData);
+      res.redirect("/menu-mgr");
     });
   } catch (err) {
     console.log(err);
@@ -44,11 +44,9 @@ router.post("/login", async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.loggedInManager = true;
 
-      res
-        .status(200)
-        .json({ user: dbManageData, message: "You are now logged in!" });
+      res.redirect("/menu-mgr");
     });
   } catch (err) {
     console.log(err);
