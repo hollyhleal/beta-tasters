@@ -25,7 +25,7 @@ router.post("/login", async (req, res) => {
   try {
     const dbBetaData = await Beta.findOne({
       where: {
-        email: req.body.email,
+        email: req.body.userEmail,
       },
     });
 
@@ -36,7 +36,7 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    const validPassword = await dbBetaData.checkPassword(req.body.password);
+    const validPassword = await dbBetaData.checkPassword(req.body.userPassword);
 
     if (!validPassword) {
       res
@@ -47,10 +47,7 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
-      res
-        .status(200)
-        .json({ user: dbBetaData, message: "You are now logged in!" });
+      res.redirect("/menu-user");
     });
   } catch (err) {
     console.log(err);
