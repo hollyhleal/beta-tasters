@@ -13,9 +13,4 @@ Rating.belongsTo(Beta, {
   foreignKey: "user_id",
 });
 
-Food.hasMany(Rating);
-Rating.belongsTo(Food, {
-  foreignKey: "food_id",
-});
-
 module.exports = { Rating, Food, Beta, Manage };

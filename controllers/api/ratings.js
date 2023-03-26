@@ -5,10 +5,10 @@ const { Rating, Food, BetaTaster } = require("../../models");
 router.post("/", async (req, res) => {
   try {
     const ratingsData = await Rating.create({
-      rating: req.body.rating,
+      rating: req.body.inlineRadioOptions,
       review: req.body.review,
       user_id: req.session.user_id,
-      food_id: req.session.food_id,
+      food_id: req.session.menu_item,
     });
     res.status(200).json(ratingsData);
   } catch (err) {

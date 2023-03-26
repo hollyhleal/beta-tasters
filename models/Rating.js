@@ -31,11 +31,8 @@ Rating.init(
       },
     },
     food_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "Food",
-        key: "id",
-      },
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
