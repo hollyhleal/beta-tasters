@@ -26,21 +26,25 @@
     <nav class="navbar">
       <div class="container-fluid">
         <ul class="navbar-nav flex-row ms-auto">
-          <li class="li-inline nav-item m-2"><a href="/contact">Contact Us</a></li>
+          <li class="li-inline nav-item m-2"><a href="/menu-user">Current Menu</a></li>
           {{#if loggedInUser}}
-            <li class="li-inline nav-item m-2"><a
-                href="/menu-user"
-              >Menu</a></li>
             <li class="li-inline nav-item m-2"><a href="/review-user">Post a
                 Review</a></li>
-            <li class="li-inline nav-item m-2"><a href="#">Logout</a></li>
+            <li class="li-inline nav-item m-2"><a
+                href="/view-rev-user"
+              >Reviews</a></li>
+            <li class="li-inline nav-item m-2"><a href="/contact">Contact Us</a></li>
+            <li class="li-inline nav-item m-2"><a href="/logout">Logout</a></li>
           {{else}}
             {{#if loggedInManager}}
-              <li class="li-inline nav-item m-2"><a href="/menu-mgr">Update Menu</a></li>
+              <li class="li-inline nav-item m-2"><a href="/review-mgr">Update
+                  Menu</a></li>
               <li class="li-inline nav-item m-2"><a
                   href="/reviews-mgr"
                 >Reviews</a></li>
-              <li class="li-inline nav-item m-2"><a href="#">Logout</a></li>
+              <li class="li-inline nav-item m-2"><a
+                  href="/logout"
+                >Logout</a></li>
             {{/if}}
           {{/if}}
         </ul>
