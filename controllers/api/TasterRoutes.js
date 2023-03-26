@@ -57,4 +57,16 @@ router.post("/login", async (req, res) => {
   }
 });
 
+//Need to create a /logout route for beta tasters (user)
+//http://localhost:3001/api/betalogin/logout
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
 module.exports = router;
