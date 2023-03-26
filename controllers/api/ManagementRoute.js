@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Manage } = require("../../models");
+const { Manage, Food } = require("../../models");
 
 // Manager - Create Account
 // route: /api/Managelogin
@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedInManager = true;
-
+      req.session.userId = dbManageData.id;
       res.redirect("/menu-mgr");
     });
   } catch (err) {
