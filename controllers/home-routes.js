@@ -140,9 +140,7 @@ router.get("/reviews-mgr", async (req, res) => {
 //http://localhost:3001/view-review-user
 router.get("/view-rev-user", async (req, res) => {
   try {
-    const ratingData = await Rating.findAll({
-      include: [{ Beta }],
-    });
+    const ratingData = await Rating.findAll({});
     const reviews = ratingData.map((rating) => rating.get({ plain: true }));
 
     res.render("view-rev-user", {
@@ -150,6 +148,7 @@ router.get("/view-rev-user", async (req, res) => {
       loggedInUser: true,
       loggedInManager: false,
     });
+    console.log(ratingData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
