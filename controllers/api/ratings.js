@@ -7,10 +7,10 @@ router.post("/", async (req, res) => {
     const ratingsData = await Rating.create({
       rating: req.body.inlineRadioOptions,
       review: req.body.review,
-      user_id: req.params.id,
+      user_id: req.session.userId,
       food_id: req.body.menu_item,
     });
-    res.status(200).json(ratingsData);
+    res.redirect("/view-rev-user");
   } catch (err) {
     res.status(400).json(err);
   }

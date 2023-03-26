@@ -140,7 +140,13 @@ router.get("/reviews-mgr", async (req, res) => {
 //http://localhost:3001/view-review-user
 router.get("/view-rev-user", async (req, res) => {
   try {
+    const ratingData = await Rating.findAll({
+      include: [{ Beta }],
+    });
+    const reviews = ratingData.map((rating) => rating.get({ plain: true }));
+
     res.render("view-rev-user", {
+      reviews,
       loggedInUser: true,
       loggedInManager: false,
     });

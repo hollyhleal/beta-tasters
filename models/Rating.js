@@ -16,12 +16,12 @@ Rating.init(
       allowNull: false,
     },
     rating: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        min: 0,
-        max: 5,
-      },
+      // validate: {
+      //   min: 0,
+      //   max: 5,
+      // },
     },
     user_id: {
       type: DataTypes.INTEGER,

@@ -11,6 +11,8 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userId = dbBetaData.id;
+      req.session.username = dbBetaData.username;
 
       res.redirect("/menu-user");
     });

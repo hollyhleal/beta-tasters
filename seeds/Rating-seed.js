@@ -31,15 +31,16 @@ const ratingdata = [
     review:
       "Yo Avocado Toast is so good! The nachos weren't loaded enough though.",
     rating: 3,
-    account_id: 4,
+    user_id: 4,
     food_id: "Avocado Toast",
   },
   {
     review: "The Devlore burger is crazy good.",
     rating: 5,
-    account_id: 4,
+    user_id: 4,
     food_id: "Devlore Burger!",
   },
+  
 ];
 
 const seedRatings = () => Rating.bulkCreate(ratingdata);
