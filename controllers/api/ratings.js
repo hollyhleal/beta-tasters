@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
       user_id: req.session.userId,
       food_id: req.body.menu_item,
     });
-    res.redirect("/view-rev-user");
+    res.status(200).redirect("/view-rev-user");
   } catch (err) {
     res.status(400).json(err);
   }
