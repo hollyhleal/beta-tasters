@@ -72,4 +72,18 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.post("/additem", async (req, res) => {
+  try {
+    const newMenuItem = await Food.create({
+      Food_name: req.body.title,
+      description: req.body.description,
+      price: req.body.price,
+      management_id: req.session.userId,
+    });
+    res.status(200).json(newMenuItem);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
