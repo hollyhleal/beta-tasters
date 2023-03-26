@@ -16,12 +16,12 @@ Rating.init(
       allowNull: false,
     },
     rating: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        min: 0,
-        max: 5,
-      },
+      // validate: {
+      //   min: 0,
+      //   max: 5,
+      // },
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -31,11 +31,8 @@ Rating.init(
       },
     },
     food_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "Food",
-        key: "id",
-      },
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
