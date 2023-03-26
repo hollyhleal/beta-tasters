@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const { Manage } = require("../../models");
 
+// Manager - Create Account
+// route: /api/Managelogin
 router.post("/", async (req, res) => {
   try {
     const dbManageData = await Manage.create({
@@ -19,11 +21,14 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Manager Login
+
+// /api/Managelogin/login
 router.post("/login", async (req, res) => {
   try {
-    const dbManageData = await User.findOne({
+    const dbManageData = await Manage.findOne({
       where: {
-        email: req.body.email,
+        email: req.body.mgrEmail,
       },
     });
 
@@ -34,7 +39,9 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    const validPassword = await dbManageData.checkPassword(req.body.password);
+    const validPassword = await dbManageData.checkPassword(
+      req.body.mgrPassword
+    );
 
     if (!validPassword) {
       res
@@ -45,7 +52,6 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedInManager = true;
-
       res.redirect("/menu-mgr");
     });
   } catch (err) {
