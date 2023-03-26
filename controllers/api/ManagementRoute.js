@@ -60,4 +60,16 @@ router.post("/login", async (req, res) => {
   }
 });
 
+//need to create /logout route for manager
+//http://localhost:3001/api/Managelogin/logout
+router.post("/logout", (req, res) => {
+  if (req.session.loggedInManager) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
 module.exports = router;
