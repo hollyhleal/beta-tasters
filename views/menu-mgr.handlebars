@@ -51,15 +51,35 @@
       <!-- Add Menu Item -->
       <div class="col">
         <h2 class="page-header">Add Menu Item</h2>
-        <form action="/additem" method="POST">
+        <form action="/api/Managelogin/additem" method="POST">
           <div class="input-group mb-3">
             <span
               class="input-group-text"
               id="inputGroup-sizing-default"
+              name="title"
             >Title</span>
             <input
               type="text"
               class="form-control"
+              id="title"
+              name="title"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span
+              class="input-group-text"
+              id="inputGroup-sizing-default"
+              name="price"
+            >Price</span>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              name="price"
+              step="0.01"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-default"
             />
@@ -70,6 +90,8 @@
             <textarea
               class="form-control"
               aria-label="With textarea"
+              id="description"
+              name="description"
             ></textarea>
           </div>
           <button type="submit" class="btn">Add Item</button>
