@@ -1,5 +1,4 @@
 console.log("Logout.js is loaded");
-//currently rendering alert message instead of logging user out.
 const logout = async function () {
   const logoutUser = await fetch("/api/betalogin/logout", {
     method: "POST",
