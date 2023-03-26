@@ -52,7 +52,6 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedInManager = true;
-      req.session.userId = dbManageData.id;
       res.redirect("/menu-mgr");
     });
   } catch (err) {
@@ -70,20 +69,6 @@ router.post("/logout", (req, res) => {
     });
   } else {
     res.status(404).end();
-  }
-});
-
-router.post("/additem", async (req, res) => {
-  try {
-    const newMenuItem = await Food.create({
-      Food_name: req.body.title,
-      description: req.body.description,
-      price: req.body.price,
-      management_id: req.session.userId,
-    });
-    res.status(200).json(newMenuItem);
-  } catch (err) {
-    res.status(500).json(err);
   }
 });
 
