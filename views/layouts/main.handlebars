@@ -34,7 +34,10 @@
                 href="/view-rev-user"
               >Reviews</a></li>
             <li class="li-inline nav-item m-2"><a href="/contact">Contact Us</a></li>
-            <li class="li-inline nav-item m-2"><a href="/logout">Logout</a></li>
+            <li class="li-inline nav-item m-2"><a
+                href="#"
+                id="logout-link"
+              >Logout</a></li>
           {{else}}
             {{#if loggedInManager}}
               <li class="li-inline nav-item m-2"><a href="/review-mgr">Update
@@ -43,7 +46,8 @@
                   href="/reviews-mgr"
                 >Reviews</a></li>
               <li class="li-inline nav-item m-2"><a
-                  href="/logout"
+                  href="#"
+                  id="logout-link"
                 >Logout</a></li>
             {{/if}}
           {{/if}}
