@@ -52,6 +52,7 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedInManager = true;
+      req.session.userId = dbManageData.id;
       res.redirect("/menu-mgr");
     });
   } catch (err) {
