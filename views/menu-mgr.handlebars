@@ -2,7 +2,7 @@
   <div class="container text-center">
     <div class="row align-items-start">
       <!-- Update Menu Item -->
-      {{!-- <div class="col">
+      <div class="col">
         <h2 class="page-header">Update Menu Item</h2>
         <form action="/updateitem" method="PUT">
           <div class="dropdown text-center">
@@ -46,7 +46,7 @@
           </div>
           <button type="submit" class="btn">Update Item</button>
         </form>
-      </div> --}}
+      </div>
 
       <!-- Add Menu Item -->
       <div class="col">
@@ -99,7 +99,7 @@
       </div>
 
       <!-- Delete Menu Item -->
-      {{!-- <div class="col">
+      <div class="col">
         <h2 class="page-header">Delete Menu Item</h2>
         <form action="/deleteitem" method="DEL">
           <div class="dropdown text-center">
@@ -123,7 +123,28 @@
           </div>
           <button type="button" id="delete-btn" class="btn">Delete</button>
         </form>
-      </div> --}}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="menu-user">
+
+  <div>
+    <h2 class="page-header">Currently Displaying Menu</h2>
+  </div>
+  <div class="container">
+
+    <div class="card">
+      <!-- card containing the menu item name and description -->
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          {{#each foods}}
+            <h4>{{Food_name}}</h4>
+            <li class="list-group-item">{{description}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
     </div>
   </div>
 </section>

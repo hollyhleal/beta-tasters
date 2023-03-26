@@ -5,14 +5,6 @@ const sendEmail = require("../utils/emails");
 // GET landing page
 router.get("/", async (req, res) => {
   try {
-    // const betatasterData = await Beta.findAll({}).catch((err) => {
-    //   res.json(err);
-    // });
-
-    // const betatasters = betatasterData.map((betatasters) =>
-    //   betatasters.get({ plain: true })
-    // );
-
     res.render("landing", {
       // betatasters,
       loggedInUser: req.session.loggedInUser, //can set to true/false for testing
@@ -55,25 +47,28 @@ router.get("/contact", async (req, res) => {
 // GET food item by id page
 // Not working - Not needed
 //http://localhost:3001/menu-item/:id
-router.get("/menu-item/:id", async (req, res) => {
-  try {
-    const foodId = await Food.findByPk(req.params.id);
-    if (!foodId) {
-      res.status(400).json({ message: "No food item found with that id." });
-      return;
-    }
-    res.render("menu-item", { foodId });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get("/menu-item/:id", async (req, res) => {
+//   try {
+//     const foodId = await Food.findByPk(req.params.id);
+//     if (!foodId) {
+//       res.status(400).json({ message: "No food item found with that id." });
+//       return;
+//     }
+//     res.render("menu-item", { foodId });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // GET menu-mgr
 // Working
 //http://localhost:3001/menu-mgr
 router.get("/menu-mgr", async (req, res) => {
   try {
+    const foodData = await Food.findAll({});
+    const foods = foodData.map((food) => food.get({ plain: true }));
     res.render("menu-mgr", {
+      foods,
       loggedInUser: false,
       loggedInManager: true,
     });
@@ -88,9 +83,7 @@ router.get("/menu-mgr", async (req, res) => {
 //http://localhost:3001/menu-user
 router.get("/menu-user", async (req, res) => {
   try {
-    const foodData = await Food.findAll({
-      // include: [{ model: Food }],
-    });
+    const foodData = await Food.findAll({});
 
     const foods = foodData.map((food) => food.get({ plain: true }));
 
