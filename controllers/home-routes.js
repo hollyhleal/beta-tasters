@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Beta, Rating, Food } = require("../models");
 
 // GET landing page
+//http://localhost:3001/
 router.get("/", async (req, res) => {
   if (req.session.loggedInUser) {
     res.redirect("/menu-user");
