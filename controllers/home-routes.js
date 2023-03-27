@@ -5,9 +5,9 @@ const { Beta, Rating, Food } = require("../models");
 //http://localhost:3001/
 router.get("/", async (req, res) => {
   if (req.session.loggedInUser) {
-    res.redirect("/menu-user");
+    return res.redirect("/menu-user");
   } else if (req.session.loggedInManager) {
-    res.redirect("/menu-mgr");
+    return res.redirect("/menu-mgr");
   }
   try {
     res.render("landing", {
@@ -37,7 +37,7 @@ router.get("/contact", async (req, res) => {
 //http://localhost:3001/menu-mgr
 router.get("/menu-mgr", async (req, res) => {
   if (!req.session.loggedInManager) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     const foodData = await Food.findAll({});
@@ -58,7 +58,7 @@ router.get("/menu-mgr", async (req, res) => {
 //http://localhost:3001/menu-user
 router.get("/menu-user", async (req, res) => {
   if (!req.session.loggedInUser) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     const foodData = await Food.findAll({});
@@ -81,7 +81,7 @@ router.get("/menu-user", async (req, res) => {
 //http://localhost:3001/review-user
 router.get("/review-user", async (req, res) => {
   if (!req.session.loggedInUser) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     res.render("review-user", {
@@ -99,7 +99,7 @@ router.get("/review-user", async (req, res) => {
 // Working
 router.get("/reviews-mgr", async (req, res) => {
   if (!req.session.loggedInManager) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     const ratingData = await Rating.findAll({
@@ -123,7 +123,7 @@ router.get("/reviews-mgr", async (req, res) => {
 //http://localhost:3001/view-review-user
 router.get("/view-rev-user", async (req, res) => {
   if (!req.session.loggedInUser) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     const ratingData = await Rating.findAll({
@@ -142,5 +142,14 @@ router.get("/view-rev-user", async (req, res) => {
   }
 });
 
+//GET route for error-page
+router.get("/error-page", async (req, res) => {
+  try {
+    res.render("error-page", {});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

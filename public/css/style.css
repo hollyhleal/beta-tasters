@@ -139,3 +139,9 @@ main {
 .review-user-rev:hover {
   box-shadow: 4px 8px 16px var(--blue);
 }
+
+.error-page {
+  color: var(--darkgreen);
+  text-decoration: underline;
+  margin-top: 10rem;
+}
