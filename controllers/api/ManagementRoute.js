@@ -73,6 +73,7 @@ router.post("/logout", (req, res) => {
   }
 });
 
+//http://localhost:3001/api/Managelogin/additem
 router.post("/additem", async (req, res) => {
   try {
     const newMenuItem = await Food.create({
@@ -87,6 +88,7 @@ router.post("/additem", async (req, res) => {
   }
 });
 
+//http://localhost:3001/api/Managelogin/(userInput)
 router.delete("/:id", (req, res) => {
   try {
     const [affectedRows] = Food.destroy({
