@@ -24,13 +24,13 @@ section {
 
 .beta-btn {
   background-color: var(--blue);
-  border: 1px solid var(--beige);
+  border: 1px solid var(--blue);
   color: white;
 }
 
 .beta-btn:hover {
   background-color: var(--darkgreen);
-  border: 1px solid var(--beige);
+  border: 1px solid var(--darkgreen);
   color: black;
 }
 
