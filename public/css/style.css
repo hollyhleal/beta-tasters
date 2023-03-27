@@ -119,12 +119,22 @@ main {
 .review-mgr-card {
   background-color: var(--blue);
   color: var(--beige);
-  box-shadow: 2px 4px 8px var(--darkgreen);
+  box-shadow: 2px 4px 8px var(--blue);
   transition: 0.3s;
 }
 
 /* added for review-mgr page */
 .review-mgr-card:hover {
-  box-shadow: 4px 8px 16px var(--darkgreen);
-  cursor: pointer;
+  box-shadow: 4px 8px 16px var(--blue);
+}
+
+.review-user-rev {
+  background-color: var(--blue);
+  color: var(--beige);
+  box-shadow: 2px 4px 8px var(--blue);
+  transition: 0.3s;
+}
+
+.review-user-rev:hover {
+  box-shadow: 4px 8px 16px var(--blue);
 }
