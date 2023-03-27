@@ -87,7 +87,7 @@ router.post("/additem", async (req, res) => {
   }
 });
 
-router.delete("/id", (req, res) => {
+router.delete("/:id", (req, res) => {
   try {
     const [affectedRows] = Food.destroy({
       where: {

@@ -61,9 +61,9 @@
     <div class="card mb-2">
       <!-- card containing the menu item name and description -->
        {{#each foods}}
-      <div class="card-body" data-id="{{id}}" >
+      <div class="card-body">
         <ul class="list-group list-group-flush">
-            <button type="button" class="btn removeItem mgr-btn ps-2 col-2" id="removeItem">Remove</button>
+            <button type="button" class="btn removeItem mgr-btn ps-2 col-2" id="removeItem" data-id={{id}}>Remove</button>
             <h2>{{Food_name}}</h2>
             <li class="list-group-item">{{description}} <br> {{price}}</li>
         </ul>
