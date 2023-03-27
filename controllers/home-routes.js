@@ -1,9 +1,14 @@
 const router = require("express").Router();
-const { Beta, Rating, Food, Manage } = require("../models");
-const sendEmail = require("../utils/emails");
+const { Beta, Rating, Food } = require("../models");
 
 // GET landing page
+//http://localhost:3001/
 router.get("/", async (req, res) => {
+  if (req.session.loggedInUser) {
+    res.redirect("/menu-user");
+  } else if (req.session.loggedInManager) {
+    res.redirect("/menu-mgr");
+  }
   try {
     res.render("landing", {
       // betatasters,
@@ -27,43 +32,13 @@ router.get("/contact", async (req, res) => {
   }
 });
 
-// GET all food items page
-// Not working - Not needed
-//http://localhost:3001/menu-items
-// router.get("/menu-items", async (req, res) => {
-//   try {
-//     const foodData = await Food.findAll({
-//       include: [{ model: Food }],
-//     });
-
-//     const foods = foodData.map((food) => food.get({ plain: true }));
-
-//     res.render("menu-items", { foods });
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
-// GET food item by id page
-// Not working - Not needed
-//http://localhost:3001/menu-item/:id
-// router.get("/menu-item/:id", async (req, res) => {
-//   try {
-//     const foodId = await Food.findByPk(req.params.id);
-//     if (!foodId) {
-//       res.status(400).json({ message: "No food item found with that id." });
-//       return;
-//     }
-//     res.render("menu-item", { foodId });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 // GET menu-mgr
 // Working
 //http://localhost:3001/menu-mgr
 router.get("/menu-mgr", async (req, res) => {
+  if (!req.session.loggedInManager) {
+    res.redirect("/");
+  }
   try {
     const foodData = await Food.findAll({});
     const foods = foodData.map((food) => food.get({ plain: true }));
@@ -82,6 +57,9 @@ router.get("/menu-mgr", async (req, res) => {
 // Working
 //http://localhost:3001/menu-user
 router.get("/menu-user", async (req, res) => {
+  if (!req.session.loggedInUser) {
+    res.redirect("/");
+  }
   try {
     const foodData = await Food.findAll({});
 
@@ -102,6 +80,9 @@ router.get("/menu-user", async (req, res) => {
 // Working
 //http://localhost:3001/review-user
 router.get("/review-user", async (req, res) => {
+  if (!req.session.loggedInUser) {
+    res.redirect("/");
+  }
   try {
     res.render("review-user", {
       loggedInUser: true,
@@ -117,6 +98,9 @@ router.get("/review-user", async (req, res) => {
 //http://localhost:3001/reviews-mgr
 // Working
 router.get("/reviews-mgr", async (req, res) => {
+  if (!req.session.loggedInManager) {
+    res.redirect("/");
+  }
   try {
     const ratingData = await Rating.findAll({
       include: [{ model: Beta }],
@@ -138,6 +122,9 @@ router.get("/reviews-mgr", async (req, res) => {
 // Working - but needs to include id
 //http://localhost:3001/view-review-user
 router.get("/view-rev-user", async (req, res) => {
+  if (!req.session.loggedInUser) {
+    res.redirect("/");
+  }
   try {
     const ratingData = await Rating.findAll({
       include: [{ model: Beta }],
@@ -149,31 +136,6 @@ router.get("/view-rev-user", async (req, res) => {
       loggedInUser: true,
       loggedInManager: false,
     });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-//GET Error-page
-router.get("/error-page", async (req, res) => {
-  try {
-    res.render("error-page", {});
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// Front-end test route
-router.post("/loggedIn", async (req, res) => {
-  try {
-    console.log("=====");
-    console.log(req.body);
-    console.log("=====");
-    // res.status(200).send("Example submitted!");
-    // res.render("landing");
-    res.redirect("/");
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

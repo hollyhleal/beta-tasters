@@ -1,5 +1,6 @@
 :root {
   --blue: #789395;
+  --darkblue: #6c757d;
   --darkgreen: #94b49f;
   --lightgreen: #b4cfb0;
   --beige: #e5e3c9;
@@ -58,7 +59,7 @@ section {
   font-family: var(--logofont);
   text-align: left;
   padding: 40px;
-  color: var(--lightgreen);
+  color: var(--darkgreen);
 }
 
 /* added for review-user page  */
