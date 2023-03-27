@@ -4,7 +4,6 @@
 
 ## Description
 
-
 ### Table of Contents
 
 [Challenge](https://github.com/hollyhleal/beta-tasters#challenge)<br>
@@ -12,6 +11,7 @@
 [Installation](https://github.com/hollyhleal/beta-tasters#installation)<br>
 [Links](https://github.com/hollyhleal/beta-tasters#links)<br>
 [Credits](https://github.com/hollyhleal/beta-tasters#credits)<br>
+[License](https://github.com/hollyhleal/beta-tasters#license)<br>
 
 ### Challenge
 
@@ -46,3 +46,5 @@ icebox
 [Michael Mount](https://github.com/MMount98)<br>
 [Joshua Nelson](https://github.com/joshua-wade7)<br>
 [Jacob](https://github.com/JThorneX) [Thorne](https://github.com/ShiningStars73)
+
+### License
