@@ -81,7 +81,24 @@ router.post("/additem", async (req, res) => {
       price: req.body.price,
       management_id: req.session.userId,
     });
-    res.status(200).json(newMenuItem);
+    res.redirect("/menu-mgr");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.delete("/id", (req, res) => {
+  try {
+    const [affectedRows] = Food.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
   } catch (err) {
     res.status(500).json(err);
   }
