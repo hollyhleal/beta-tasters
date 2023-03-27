@@ -3,18 +3,18 @@
   <div>
     <h2 class="page-header m-2">Welcome! <br>Take a look at our menu in development...</h2>
   </div>
-  <div class="container">
-
-    <div class="card rev-card-body">
+    <div class="container">
+    <div class="card mb-2">
       <!-- card containing the menu item name and description -->
-      <div class="card-body rev-card-body">
+       {{#each foods}}
+      <div class="card-body">
         <ul class="list-group list-group-flush">
-          {{#each foods}}
-            <h4>{{Food_name}}</h4>
-            <li class="list-group-item">{{description}}</li>
-          {{/each}}
+            <h3>{{Food_name}}</h3>
+            <li class="list-group-item">{{description}} <br> {{price}}</li>
         </ul>
       </div>
+       {{/each}}
+    </div>
     </div>
     <div class="container">
       <a href="/review-user">
