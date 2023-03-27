@@ -1,4 +1,3 @@
-
 const subBtn = document.getElementById("contactBtn");
 
 const newFormHandler = async function (event) {
@@ -31,3 +30,5 @@ const newFormHandler = async function (event) {
   }
 };
 subBtn.addEventListener("click", newFormHandler);
+
+// test
