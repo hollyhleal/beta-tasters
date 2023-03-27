@@ -27,38 +27,6 @@ router.get("/contact", async (req, res) => {
   }
 });
 
-// GET all food items page
-// Not working - Not needed
-//http://localhost:3001/menu-items
-// router.get("/menu-items", async (req, res) => {
-//   try {
-//     const foodData = await Food.findAll({
-//       include: [{ model: Food }],
-//     });
-
-//     const foods = foodData.map((food) => food.get({ plain: true }));
-
-//     res.render("menu-items", { foods });
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
-// GET food item by id page
-// Not working - Not needed
-//http://localhost:3001/menu-item/:id
-// router.get("/menu-item/:id", async (req, res) => {
-//   try {
-//     const foodId = await Food.findByPk(req.params.id);
-//     if (!foodId) {
-//       res.status(400).json({ message: "No food item found with that id." });
-//       return;
-//     }
-//     res.render("menu-item", { foodId });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // GET menu-mgr
 // Working
