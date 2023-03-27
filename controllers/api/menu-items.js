@@ -40,18 +40,18 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// delete existing menu items
-router.delete("/:id", async (req, res) => {
-  try {
-    const foodData = await Food.destroy({
-      where: {
-        food_id: req.params.id,
-      },
-    });
-    res.status(200).json(foodData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// // delete existing menu items
+// router.delete("/:id", async (req, res) => {
+//   try {
+//     const foodData = await Food.destroy({
+//       where: {
+//         food_id: req.params.id,
+//       },
+//     });
+//     res.status(200).json(foodData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;

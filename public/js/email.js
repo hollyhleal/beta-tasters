@@ -1,4 +1,3 @@
-console.log("Email.js was connected");
 
 const subBtn = document.getElementById("contactBtn");
 
