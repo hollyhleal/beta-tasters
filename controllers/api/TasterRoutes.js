@@ -35,6 +35,7 @@ router.post("/login", async (req, res) => {
       res
         .status(400)
         .json({ message: "Incorrect email or password. Please try again!" });
+      res.redirect("/error-page");
       return;
     }
 
@@ -44,6 +45,7 @@ router.post("/login", async (req, res) => {
       res
         .status(400)
         .json({ message: "Incorrect email or password. Please try again!" });
+      res.redirect("/error-page");
       return;
     }
 

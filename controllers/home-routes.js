@@ -155,6 +155,16 @@ router.get("/view-rev-user", async (req, res) => {
   }
 });
 
+//GET Error-page
+router.get("/error-page", async (req, res) => {
+  try {
+    res.render("error-page", {});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // Front-end test route
 router.post("/loggedIn", async (req, res) => {
   try {
