@@ -3,12 +3,12 @@
     DevLore Cafe</h2>
   <div class="container">
     {{#each reviews}}
-      <div class="card rev-card-body mb-2">
+      <div class="card rev-card-body mb-4 review-user-rev">
         <div class="card-body rev-card-body">
           {{! displaying each user review / menu item inside dynamically generated cards }}
           <div>
             <h2 class="m-2 mb-4">{{food_id}}</h2>
-            <h4 class="m-2">Rating: {{rating}}</h4>
+            <h4 class="m-2">{{rating}} out of 5 stars</h4>
             <p>{{review}}</p>
             <div class="d-flex flex-row justify-content-end mt-5">
               {{!-- <h5 id="user-rating">{{rating}}</h5> --}}
