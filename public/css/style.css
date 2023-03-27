@@ -58,6 +58,11 @@ section {
   color: var(--lightgreen);
 }
 
+/* added for review-user page  */
+.rating-radios:hover {
+  cursor: pointer;
+}
+
 header {
   background-color: var(--beige);
 }
@@ -105,4 +110,18 @@ main {
 .review-user-card {
   background-color: var(--beige);
   border: 5px solid var(--beige);
+}
+
+/* added for review-mgr page */
+.review-mgr-card {
+  background-color: var(--blue);
+  color: var(--beige);
+  box-shadow: 2px 4px 8px var(--darkgreen);
+  transition: 0.3s;
+}
+
+/* added for review-mgr page */
+.review-mgr-card:hover {
+  box-shadow: 4px 8px 16px var(--darkgreen);
+  cursor: pointer;
 }
