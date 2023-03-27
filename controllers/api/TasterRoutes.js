@@ -32,9 +32,9 @@ router.post("/login", async (req, res) => {
     });
 
     if (!dbBetaData) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password. Please try again!" });
+      // res
+      //   .status(400)
+      //   .json({ message: "Incorrect email or password. Please try again!" });
       res.redirect("/error-page");
       return;
     }
@@ -42,9 +42,9 @@ router.post("/login", async (req, res) => {
     const validPassword = await dbBetaData.checkPassword(req.body.userPassword);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password. Please try again!" });
+      // res
+      //   .status(400)
+      //   .json({ message: "Incorrect email or password. Please try again!" });
       res.redirect("/error-page");
       return;
     }
