@@ -1,17 +1,17 @@
 <section>
-  <h2 class="page-header">What other Beta Tasters have said about the DevLore
-    Cafe</h2>
+  <h2 class="page-header m-3">What other Beta Tasters have said about the
+    DevLore Cafe</h2>
   <div class="container">
     {{#each reviews}}
-      <div class="card">
-        <div class="card-body">
+      <div class="card rev-card-body">
+        <div class="card-body rev-card-body">
           {{! displaying each user review / menu item inside dynamically generated cards }}
           <div>
-            <h2>{{food_id}}</h2>
-            <h3>{{rating}}</h3>
+            <h2 class="m-2 mb-4">{{food_id}}</h2>
+            <h4 class="m-2">Rating: {{rating}}</h4>
             <p>{{review}}</p>
-            <div class="d-flex flex-row justify-content-around mt-5">
-              <h5 id="user-rating">{{rating}}</h5>
+            <div class="d-flex flex-row justify-content-end mt-5">
+              {{!-- <h5 id="user-rating">{{rating}}</h5> --}}
               <h5 id="user-name">{{BetaTaster.username}}</h5>
             </div>
           </div>

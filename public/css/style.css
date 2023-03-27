@@ -101,3 +101,14 @@ main {
   font-family: var(--bodyfont);
   text-align: center;
 } */
+
+/* comment out if you don't want the cards to be green */
+.rev-card-body,
+.rev-card-body li {
+  background-color: var(--lightgreen);
+}
+
+.review-user-card {
+  background-color: var(--beige);
+  border: 5px solid var(--beige);
+}
