@@ -99,6 +99,12 @@ main {
   color: var(--darkgreen);
   font-family: var(--bodyfont);
   text-align: center;
+  animation:slideIn;
+  animation-duration:2s ;
+  animation-play-state:running ;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-timing-function: linear;
 }
 
 .contact-page {
@@ -116,6 +122,16 @@ main {
   border: 5px solid var(--beige);
 }
 
+<<<<<<< HEAD
+@keyframes slideIn {
+  from {
+      margin-left: 100%;
+  }
+  to{
+      margin-left: 0%;
+  }
+}
+=======
 /* added for review-mgr page */
 .review-mgr-card {
   background-color: var(--blue);
@@ -145,3 +161,4 @@ main {
   text-decoration: underline;
   margin-top: 10rem;
 }
+>>>>>>> 819b63226b5932d0637262e78e25cde4531b0030
