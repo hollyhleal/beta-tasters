@@ -8,6 +8,49 @@
   --bodyfont: "Playfair Display SC", serif;
 }
 
+/* gets rid of white space from margin bootstrap  */
+body {
+  background-color: var(--beige);
+}
+
+section {
+  font-family: var(--bodyfont);
+}
+
+/* uncomment if you want the button font to be "normal" */
+/* .btn {
+  font-family: serif;
+} */
+
+.beta-btn {
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  color: white;
+}
+
+.beta-btn:hover {
+  background-color: var(--darkgreen);
+  border: 1px solid var(--darkgreen);
+  color: black;
+}
+
+.mgr-btn {
+  background-color: var(--darkgreen);
+  border: 1px solid var(--beige);
+  color: black;
+}
+
+.mgr-btn:hover {
+  background-color: var(--blue);
+  border: 1px solid var(--beige);
+  color: white;
+}
+
+.input-group-text {
+  background-color: var(--lightgreen);
+  border: 1px solid var(--beige);
+}
+
 .logo {
   font-family: var(--logofont);
   text-align: left;
@@ -22,6 +65,10 @@ header {
 a {
   text-decoration: none;
   color: var(--beige);
+}
+
+.nav-item a:hover {
+  color: var(--darkgreen);
 }
 
 .navbar {
@@ -45,8 +92,8 @@ main {
   text-align: center;
 }
 
-#user-menu-post-btn {
-  background-color: var(--darkgreen);
+.contact-page {
+  color: var(--darkgreen);
 }
 
 /* #review-user-h2 {
@@ -55,14 +102,7 @@ main {
   text-align: center;
 } */
 
-.user-dropdown-btn {
-  background-color: var(--blue);
-}
-
-.user-dropdown-btn:hover {
-  background-color: rgb(152, 171, 179);
-}
-
-#user-submit-review-btn {
-  background-color: var(--blue);
+.review-user-card {
+  background-color: var(--beige);
+  border: 5px solid var(--beige);
 }
