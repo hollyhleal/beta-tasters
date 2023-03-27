@@ -5,9 +5,9 @@ const { Beta, Rating, Food } = require("../models");
 //http://localhost:3001/
 router.get("/", async (req, res) => {
   if (req.session.loggedInUser) {
-    res.redirect("/menu-user");
+    return res.redirect("/menu-user");
   } else if (req.session.loggedInManager) {
-    res.redirect("/menu-mgr");
+    return res.redirect("/menu-mgr");
   }
   try {
     res.render("landing", {
@@ -141,6 +141,5 @@ router.get("/view-rev-user", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;
