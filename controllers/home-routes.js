@@ -142,4 +142,14 @@ router.get("/view-rev-user", async (req, res) => {
   }
 });
 
+//GET route for error-page
+router.get("/error-page", async (req, res) => {
+  try {
+    res.render("error-page", {});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
