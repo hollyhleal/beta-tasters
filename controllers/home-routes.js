@@ -37,7 +37,7 @@ router.get("/contact", async (req, res) => {
 //http://localhost:3001/menu-mgr
 router.get("/menu-mgr", async (req, res) => {
   if (!req.session.loggedInManager) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     const foodData = await Food.findAll({});
@@ -58,7 +58,7 @@ router.get("/menu-mgr", async (req, res) => {
 //http://localhost:3001/menu-user
 router.get("/menu-user", async (req, res) => {
   if (!req.session.loggedInUser) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     const foodData = await Food.findAll({});
@@ -81,7 +81,7 @@ router.get("/menu-user", async (req, res) => {
 //http://localhost:3001/review-user
 router.get("/review-user", async (req, res) => {
   if (!req.session.loggedInUser) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     res.render("review-user", {
@@ -99,7 +99,7 @@ router.get("/review-user", async (req, res) => {
 // Working
 router.get("/reviews-mgr", async (req, res) => {
   if (!req.session.loggedInManager) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     const ratingData = await Rating.findAll({
@@ -123,7 +123,7 @@ router.get("/reviews-mgr", async (req, res) => {
 //http://localhost:3001/view-review-user
 router.get("/view-rev-user", async (req, res) => {
   if (!req.session.loggedInUser) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   try {
     const ratingData = await Rating.findAll({
