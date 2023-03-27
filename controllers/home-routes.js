@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const { Beta, Rating, Food} = require("../models");
-
+const { Beta, Rating, Food } = require("../models");
 
 // GET landing page
 router.get("/", async (req, res) => {
@@ -80,6 +79,9 @@ router.get("/menu-user", async (req, res) => {
 // Working
 //http://localhost:3001/review-user
 router.get("/review-user", async (req, res) => {
+  if (!req.session.loggedInUser) {
+    res.redirect("/");
+  }
   try {
     res.render("review-user", {
       loggedInUser: true,
@@ -95,6 +97,9 @@ router.get("/review-user", async (req, res) => {
 //http://localhost:3001/reviews-mgr
 // Working
 router.get("/reviews-mgr", async (req, res) => {
+  if (!req.session.loggedInManager) {
+    res.redirect("/");
+  }
   try {
     const ratingData = await Rating.findAll({
       include: [{ model: Beta }],
@@ -136,19 +141,5 @@ router.get("/view-rev-user", async (req, res) => {
   }
 });
 
-// // Front-end test route
-// router.post("/loggedIn", async (req, res) => {
-//   try {
-//     console.log("=====");
-//     console.log(req.body);
-//     console.log("=====");
-//     // res.status(200).send("Example submitted!");
-//     // res.render("landing");
-//     res.redirect("/");
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;
