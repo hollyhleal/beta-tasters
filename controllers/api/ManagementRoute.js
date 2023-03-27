@@ -81,7 +81,7 @@ router.post("/additem", async (req, res) => {
       price: req.body.price,
       management_id: req.session.userId,
     });
-    res.status(200).json(newMenuItem);
+    res.redirect("/menu-mgr");
   } catch (err) {
     res.status(500).json(err);
   }
