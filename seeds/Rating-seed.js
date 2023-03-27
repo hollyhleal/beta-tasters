@@ -4,7 +4,7 @@ const ratingdata = [
   {
     review: "The Butter Milk Pancakes look amazing!",
     rating: 4,
-    user_id: 1,
+    user_id: 4,
     food_id: "Butter Milk Panacakes",
   },
   {
@@ -31,16 +31,15 @@ const ratingdata = [
     review:
       "Yo Avocado Toast is so good! The nachos weren't loaded enough though.",
     rating: 3,
-    user_id: 4,
+    user_id: 5,
     food_id: "Avocado Toast",
   },
   {
     review: "The Devlore burger is crazy good.",
     rating: 5,
-    user_id: 4,
+    user_id: 6,
     food_id: "Devlore Burger!",
   },
-  
 ];
 
 const seedRatings = () => Rating.bulkCreate(ratingdata);
