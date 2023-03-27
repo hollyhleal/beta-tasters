@@ -1,5 +1,6 @@
 :root {
   --blue: #789395;
+  --darkblue: #6c757d;
   --darkgreen: #94b49f;
   --lightgreen: #b4cfb0;
   --beige: #e5e3c9;
@@ -58,7 +59,12 @@ section {
   font-family: var(--logofont);
   text-align: left;
   padding: 40px;
-  color: var(--lightgreen);
+  color: var(--darkgreen);
+}
+
+/* added for review-user page  */
+.rating-radios:hover {
+  cursor: pointer;
 }
 
 header {
@@ -116,6 +122,7 @@ main {
   border: 5px solid var(--beige);
 }
 
+<<<<<<< HEAD
 @keyframes slideIn {
   from {
       margin-left: 100%;
@@ -124,3 +131,34 @@ main {
       margin-left: 0%;
   }
 }
+=======
+/* added for review-mgr page */
+.review-mgr-card {
+  background-color: var(--blue);
+  color: var(--beige);
+  box-shadow: 2px 4px 8px var(--blue);
+  transition: 0.3s;
+}
+
+/* added for review-mgr page */
+.review-mgr-card:hover {
+  box-shadow: 4px 8px 16px var(--blue);
+}
+
+.review-user-rev {
+  background-color: var(--blue);
+  color: var(--beige);
+  box-shadow: 2px 4px 8px var(--blue);
+  transition: 0.3s;
+}
+
+.review-user-rev:hover {
+  box-shadow: 4px 8px 16px var(--blue);
+}
+
+.error-page {
+  color: var(--darkgreen);
+  text-decoration: underline;
+  margin-top: 10rem;
+}
+>>>>>>> 819b63226b5932d0637262e78e25cde4531b0030

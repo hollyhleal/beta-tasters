@@ -28,14 +28,14 @@
         </div>
       </div>
     </div>
-    <div class="d-flex row justify-content-around mt-3">
+    <div class="d-flex row justify-content-around mt-3 mb-auto">
       {{#each reviews}}
-        <div class="card col-5">
+        <div class="card col-5 mb-4 review-mgr-card">
           <div class="card-body">
             <div>
               <p>{{review}}</p>
               <div class="d-flex flex-row justify-content-around mt-5">
-                <h5 id="user-rating">{{rating}}</h5>
+                <h5 id="user-rating">{{rating}} out of 5 stars</h5>
                 <h5 id="user-name">{{BetaTaster.username}}</h5>
               </div>
             </div>
