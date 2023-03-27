@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.loggedInUser = true;
       req.session.userId = dbBetaData.id;
       req.session.username = dbBetaData.username;
 
@@ -48,7 +48,7 @@ router.post("/login", async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.loggedInUser = true;
       res.redirect("/menu-user");
     });
   } catch (err) {
@@ -58,7 +58,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
-  if (req.session.loggedInManager) {
+  if (req.session.loggedInUser) {
     req.session.destroy(() => {
       res.status(204).end();
     });
