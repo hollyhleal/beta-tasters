@@ -10,7 +10,10 @@
 
 /* gets rid of white space from margin bootstrap  */
 body {
+  /* background-image: url(https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80); */
+  height: 100vh;
   background-color: var(--beige);
+  text-align: center;
 }
 
 section {
@@ -35,15 +38,15 @@ section {
 }
 
 .mgr-btn {
-  background-color: var(--darkgreen);
-  border: 1px solid var(--beige);
-  color: black;
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  color: white;
 }
 
 .mgr-btn:hover {
-  background-color: var(--blue);
-  border: 1px solid var(--beige);
-  color: white;
+  background-color: var(--darkgreen);
+  border: 1px solid var(--darkgreen);
+  color: black;
 }
 
 .input-group-text {
@@ -83,7 +86,7 @@ a {
 
 footer {
   background-color: var(--blue);
-  color: var(--lightgreen);
+  color: var(--beige);
   text-align: center;
 }
 
