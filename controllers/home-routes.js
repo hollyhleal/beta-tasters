@@ -1,9 +1,14 @@
 const router = require("express").Router();
-const { Beta, Rating, Food, Manage } = require("../models");
-const sendEmail = require("../utils/emails");
+const { Beta, Rating, Food} = require("../models");
+
 
 // GET landing page
 router.get("/", async (req, res) => {
+  if (req.session.loggedInUser) {
+    res.redirect("/menu-user");
+  } else if (req.session.loggedInManager) {
+    res.redirect("/menu-mgr");
+  }
   try {
     res.render("landing", {
       // betatasters,
@@ -27,11 +32,13 @@ router.get("/contact", async (req, res) => {
   }
 });
 
-
 // GET menu-mgr
 // Working
 //http://localhost:3001/menu-mgr
 router.get("/menu-mgr", async (req, res) => {
+  if (!req.session.loggedInManager) {
+    res.redirect("/");
+  }
   try {
     const foodData = await Food.findAll({});
     const foods = foodData.map((food) => food.get({ plain: true }));
@@ -50,6 +57,9 @@ router.get("/menu-mgr", async (req, res) => {
 // Working
 //http://localhost:3001/menu-user
 router.get("/menu-user", async (req, res) => {
+  if (!req.session.loggedInUser) {
+    res.redirect("/");
+  }
   try {
     const foodData = await Food.findAll({});
 
@@ -106,6 +116,9 @@ router.get("/reviews-mgr", async (req, res) => {
 // Working - but needs to include id
 //http://localhost:3001/view-review-user
 router.get("/view-rev-user", async (req, res) => {
+  if (!req.session.loggedInUser) {
+    res.redirect("/");
+  }
   try {
     const ratingData = await Rating.findAll({
       include: [{ model: Beta }],
@@ -123,19 +136,19 @@ router.get("/view-rev-user", async (req, res) => {
   }
 });
 
-// Front-end test route
-router.post("/loggedIn", async (req, res) => {
-  try {
-    console.log("=====");
-    console.log(req.body);
-    console.log("=====");
-    // res.status(200).send("Example submitted!");
-    // res.render("landing");
-    res.redirect("/");
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+// // Front-end test route
+// router.post("/loggedIn", async (req, res) => {
+//   try {
+//     console.log("=====");
+//     console.log(req.body);
+//     console.log("=====");
+//     // res.status(200).send("Example submitted!");
+//     // res.render("landing");
+//     res.redirect("/");
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
