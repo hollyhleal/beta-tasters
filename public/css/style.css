@@ -93,7 +93,7 @@ main {
   color: var(--darkgreen);
   font-family: var(--bodyfont);
   text-align: center;
-  animation:slidein;
+  animation:slideIn;
   animation-duration:2s ;
   animation-play-state:running ;
   animation-iteration-count: 1;
@@ -116,7 +116,7 @@ main {
   border: 5px solid var(--beige);
 }
 
-@keyframes slidein {
+@keyframes slideIn {
   from {
       margin-left: 100%;
   }
