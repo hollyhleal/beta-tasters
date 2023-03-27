@@ -122,7 +122,6 @@ main {
   border: 5px solid var(--beige);
 }
 
-<<<<<<< HEAD
 @keyframes slideIn {
   from {
       margin-left: 100%;
@@ -131,7 +130,6 @@ main {
       margin-left: 0%;
   }
 }
-=======
 /* added for review-mgr page */
 .review-mgr-card {
   background-color: var(--blue);
@@ -161,4 +159,3 @@ main {
   text-decoration: underline;
   margin-top: 10rem;
 }
->>>>>>> 819b63226b5932d0637262e78e25cde4531b0030
